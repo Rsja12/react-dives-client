@@ -5,7 +5,7 @@ import HomePage from './components/HomePage'
 
 const App = () => {
     return (
-        <div className='ui container'>
+        <div>
             <BrowserRouter>
                 <div>
                     <Route exact path='/' component={ HomePage } />
