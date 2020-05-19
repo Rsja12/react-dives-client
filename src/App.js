@@ -7,7 +7,7 @@ import NavBar from './components/NavBar'
 
 const App = () => {
     return (
-        <div class='container-fliud'>
+        <div className='container-fliud'>
             <BrowserRouter>
                 <div>
                     <NavBar />
