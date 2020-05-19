@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { signIn, signOut } from '../actions'
 
 export class GoogleAuth extends Component {
 
@@ -52,8 +54,8 @@ export class GoogleAuth extends Component {
                 <button
                     onClick={ this.onSignInClick }
                     className='btn btn-success'>
-                        <i className='google icon' />
-                        Sign Out
+                        {/* <i className='google icon' /> */}
+                        Sign In with Google
                 </button>
             )
         }
@@ -72,4 +74,4 @@ const mapStateToProps = state => ({
     isSignedIn: state.auth.isSignedIn
 })
 
-export default RTCPeerConnection(mapStateToProps, {signIn, signOut})(GoogleAuth)
+export default connect(mapStateToProps, {signIn, signOut})(GoogleAuth)
