@@ -5,17 +5,17 @@ import GoogleAuth from '../authentication/GoogleAuth'
 
 const NavBar = () => {
     return (
-        <nav className='navbar'>
+        <nav className='navbar bg-dark'>
             <ul className='nav'>
                 <li className='nav-item'>
-                    <Link className='navbar-brand' to='/'>
+                    <Link className='navbar-brand text-white' to='/'>
                         React Dives
                     </Link>
                 </li>
             </ul>
             <ul className='nav justify-content-end'>
                 <li className='nav-item'>
-                    <Link className='nav-link' to='/about'>
+                    <Link className='nav-link text-white' to='/about'>
                         About
                     </Link>
                 </li>
