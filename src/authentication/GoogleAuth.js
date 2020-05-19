@@ -4,7 +4,7 @@ export class GoogleAuth extends Component {
     render() {
         return (
             <div>
-                
+                Google Auth
             </div>
         )
     }

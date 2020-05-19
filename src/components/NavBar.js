@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+import GoogleAuth from '../authentication/GoogleAuth'
+
 const NavBar = () => {
     return (
         <nav className='navbar'>
@@ -10,16 +12,14 @@ const NavBar = () => {
                         React Dives
                     </Link>
                 </li>
+            </ul>
+            <ul className='nav justify-content-end'>
                 <li className='nav-item'>
                     <Link className='nav-link' to='/about'>
                         About
                     </Link>
                 </li>
-                <li className='nav-item'>
-                    <Link className='nav-link' to='/about'>
-                        Sign In
-                    </Link>
-                </li>
+                <GoogleAuth />
             </ul>
         </nav>
     )
