@@ -4,8 +4,10 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import HomePage from './components/HomePage'
 import About from './components/About'
 import NavBar from './components/NavBar'
-import Error from './components/Error'
-import PrivateRoute from './PrivateRoute'
+// import Error from './components/Error'
+import PrivateRoute from './routes/PrivateRoute'
+import PublicRoute from './routes/PublicRoute'
+import Dashboard from './components/divelogs/Dashboard'
 
 const App = () => {
     return (
@@ -14,9 +16,9 @@ const App = () => {
                 <div>
                     <NavBar />
                     <Switch>
-                        <Route exact path='/' component={ HomePage } />
+                        <PublicRoute exact path='/' component={ HomePage } />
                         <PrivateRoute exact path='/about' component={ About } />
-                        <Route component={ Error } />
+                        <PrivateRoute exact path='/dashboard' component={ Dashboard } />
                     </Switch>
                 </div>
             </BrowserRouter>
