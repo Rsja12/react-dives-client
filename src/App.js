@@ -5,6 +5,7 @@ import HomePage from './components/HomePage'
 import About from './components/About'
 import NavBar from './components/NavBar'
 import Error from './components/Error'
+import PrivateRoute from './PrivateRoute'
 
 const App = () => {
     return (
@@ -14,7 +15,7 @@ const App = () => {
                     <NavBar />
                     <Switch>
                         <Route exact path='/' component={ HomePage } />
-                        <Route exact path='/about' component={ About } />
+                        <PrivateRoute exact path='/about' component={ About } />
                         <Route component={ Error } />
                     </Switch>
                 </div>
