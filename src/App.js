@@ -11,7 +11,7 @@ import Dashboard from './components/divelogs/Dashboard'
 
 const App = () => {
     return (
-        <div className='container-fliud'>
+        <div>
             <BrowserRouter>
                 <div>
                     <NavBar />

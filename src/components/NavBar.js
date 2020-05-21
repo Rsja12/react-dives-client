@@ -31,26 +31,27 @@ const NavBar = ({ isSignedIn }) => {
                 </div>
             </nav>
         )
-    } else {
-        return (
-            <nav className='navbar fixed-top bg-dark'>
-                <ul className='nav'>
-                    <li className='nav-item'>
-                        <Link 
-                        className='navbar-brand text-white' 
-                        to='/'>
-                            React Dives
-                        </Link>
-                    </li>
-                </ul>
-                
-                <div className='nav justify-content-end'>
-                    <GoogleAuth />
-                </div>
-            </nav>
-        ) 
     }
-
+    // } else {
+    //     return (
+    //         <nav className='navbar fixed-top bg-dark'>
+    //             <ul className='nav'>
+    //                 <li className='nav-item'>
+    //                     <Link 
+    //                     className='navbar-brand text-white' 
+    //                     to='/'>
+    //                         React Dives
+    //                     </Link>
+    //                 </li>
+    //             </ul>
+                
+    //             <div className='nav justify-content-end'>
+    //                 <GoogleAuth />
+    //             </div>
+    //         </nav>
+    //     ) 
+    // }
+        return null
 }
 
 const mapStateToProps = state => ({

@@ -5,7 +5,7 @@ import '../styles/index.css'
 const HomePage = () => {
     return (
         <div className='homePage'>
-            <p></p>
+            <p>Dive In</p>
         </div>
     )
 }
