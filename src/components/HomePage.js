@@ -7,7 +7,8 @@ const HomePage = () => {
     return (
         <div className='homePage'>
             <p>Dive In</p>
-            <GoogleAuth />            
+            <GoogleAuth /> 
+            <p>Start Logging Dives</p>      
         </div>
     )
 }
