@@ -45,7 +45,6 @@ export class GoogleAuth extends Component {
                 <button
                     onClick={ this.onSignOutClick }
                     className='btn btn-danger'>
-                        <i className='google icon' />
                         Sign Out
                 </button>
             )
