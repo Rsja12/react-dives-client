@@ -52,8 +52,8 @@ export class GoogleAuth extends Component {
             return ( 
                 <button
                     onClick={ this.onSignInClick }
-                    className='btn btn-success'>
-                        Sign In with Google
+                    className='btn btn-dark'>
+                        Continue with Google
                 </button>
             )
         }
