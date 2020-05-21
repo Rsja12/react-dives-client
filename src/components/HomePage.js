@@ -6,7 +6,7 @@ import GoogleAuth from '../authentication/GoogleAuth'
 const HomePage = () => {
     return (
         <div className='homePage'>
-            <h1>Dive In</h1>
+            <h1>React Dives</h1>
             <GoogleAuth />
             <h1>Start Logging Dives</h1>      
         </div>
