@@ -8,7 +8,7 @@ const NavBar = ({ isSignedIn }) => {
 
     if ( isSignedIn ) {
         return (
-            <nav className='navbar navbar-light bg-light'>
+            <nav className='navbar navbar-dark bg-dark'>
                 <ul className='nav'>
                     <li className='nav-item'>
                         <Link 
