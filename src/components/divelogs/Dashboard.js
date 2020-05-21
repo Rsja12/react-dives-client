@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-const Dashboard = () => {
-    return (
-        <div>
-            Dashboard Page
-        </div>
-    )
+export class Dashboard extends Component {
+    render() {
+        return (
+            <div>
+                Dashboard
+            </div>
+        )
+    }
 }
 
 export default Dashboard
