@@ -23,3 +23,8 @@ body {
     font-variant: small-caps;
 }
 
+/*  **************************** NAVBAR  ***************************** */
+
+.nav.nav-item > button {
+    background-color: rgb(255, 66, 66);
+}
