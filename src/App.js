@@ -2,7 +2,6 @@ import React from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
 import HomePage from './components/HomePage'
-import About from './components/About'
 import NavBar from './components/NavBar'
 import Error from './components/Error'
 import PrivateRoute from './routes/PrivateRoute'
@@ -17,7 +16,6 @@ const App = () => {
                     <NavBar />
                     <Switch>
                         <PublicRoute exact path='/' component={ HomePage } />
-                        <PrivateRoute exact path='/about' component={ About } />
                         <PrivateRoute exact path='/dashboard' component={ Dashboard } />
                         <Route component={ Error } />
                     </Switch>
