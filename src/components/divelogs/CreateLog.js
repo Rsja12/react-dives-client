@@ -1,11 +1,16 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-const CreateLog = () => {
-    return (
-        <div>
-            create
-        </div>
-    )
+
+import Form from './Form'
+
+export class CreateLog extends Component {
+    render() {
+        return (
+            <div>
+                <Form />
+            </div>
+        )
+    }
 }
 
 export default CreateLog
