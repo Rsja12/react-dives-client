@@ -20,7 +20,7 @@ const App = () => {
                 <div>
                     <NavBar />
                     <Switch>
-                        <Route exact path='/' component={ HomePage } />
+                        <PublicRoute exact path='/' component={ HomePage } />
                         <PrivateRoute exact path='/dashboard' component={ Dashboard } />
                         <PrivateRoute exact path='/about' component={ About } />
                         <PrivateRoute exact path='/logs/new' component={ CreateLog } />
