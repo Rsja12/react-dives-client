@@ -11,6 +11,7 @@ import CreateLog from './components/divelogs/CreateLog'
 import ShowLog from './components/divelogs/ShowLog'
 import EditLog from './components/divelogs/EditLog'
 import DeleteLog from './components/divelogs/DeleteLog'
+import About from './components/About'
 
 const App = () => {
     return (
@@ -19,8 +20,9 @@ const App = () => {
                 <div>
                     <NavBar />
                     <Switch>
-                        <PublicRoute exact path='/' component={ HomePage } />
+                        <Route exact path='/' component={ HomePage } />
                         <PrivateRoute exact path='/dashboard' component={ Dashboard } />
+                        <PrivateRoute exact path='/about' component={ About } />
                         <PrivateRoute exact path='/logs/new' component={ CreateLog } />
                         <PrivateRoute exact path='/logs/:id' component={ ShowLog } />
                         <PrivateRoute exact path='/logs/edit/:id' component={ EditLog } />

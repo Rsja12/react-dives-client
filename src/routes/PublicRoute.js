@@ -1,20 +1,12 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Route, Redirect } from 'react-router-dom'
+import { Route, useHistory } from 'react-router-dom'
 
 const PublicRoute = ({ isSignedIn, component: Component, ...rest }) => {
+
+    const history = useHistory()
     
-    return(
-        <div>
-            <Route {...rest} component={ props => (
-                isSignedIn ? (
-                    <Redirect to='/dashboard' />
-                    ) : (
-                    <Component {...props} />
-                )
-            ) } />
-        </div>
-    )
+    if (!isSignedIn) return history.push('/')
 
 }
 

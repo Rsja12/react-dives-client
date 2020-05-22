@@ -20,6 +20,20 @@ const NavBar = ({ isSignedIn }) => {
                 </ul>
                 
                 <div className='nav justify-content-end'>
+                    <li className='nav-item'>
+                        <Link 
+                        className='navbar-brand text-white' 
+                        to='/about'>
+                            About
+                        </Link>
+                    </li>
+                    <li className='nav-item'>
+                        <Link 
+                        className='navbar-brand text-white' 
+                        to='/logs/new'>
+                            New
+                        </Link>
+                    </li>
                     <GoogleAuth />
                 </div>
             </nav>

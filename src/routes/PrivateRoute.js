@@ -6,7 +6,7 @@ const PrivateRoute = ({ isSignedIn, component: Component, ...rest }) => {
     
     return(
         <div>
-            <Route {...rest} component={ props => (
+            <Route {...rest} render={ props => (
                 isSignedIn ? (
                     <Component {...props} />
                 ) : (
@@ -15,6 +15,8 @@ const PrivateRoute = ({ isSignedIn, component: Component, ...rest }) => {
             ) } />
         </div>
     )
+
+   
 
 }
 
