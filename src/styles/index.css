@@ -28,3 +28,12 @@ body {
 .nav.justify-content-end .btn.btn-light:hover {
     background-color: rgb(255, 66, 66);
 }
+
+
+/***************************************** FORM  ******************************************** */
+
+.form-container {
+    text-align: center;
+    width: 50%;
+    margin: 7% auto;
+}
