@@ -20,7 +20,6 @@ export class Form extends Component {
         return (
             <div className='form-container'>
                 <form>
-
                     <div className='row'>
                         <div className='col-md-6'>
                             <label htmlFor='location'>Location</label>
@@ -100,6 +99,17 @@ export class Form extends Component {
                         </div>
                     </div>
 
+                    <div className='row'>
+                        <div className='col-lg-8'>
+                            <label htmlFor='notes'>Notes</label>
+                            <textarea 
+                                className='form-control'
+                                id='notes'
+                                onChange={ this.handleTextInput }
+                                value={ notes }
+                            />
+                        </div>
+                    </div>
                 </form>
             </div>
         )
