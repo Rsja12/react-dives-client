@@ -6,10 +6,11 @@ export class Form extends Component {
         location: '',
         divesite: '',
         maxDepth: null,
+        bottomTime: null,
         visibility: null,
         waterTemp: null,
         weight: null,
-        bottomTime: null
+        notes: ''
     }
 
     render() {
