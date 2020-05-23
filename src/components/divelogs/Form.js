@@ -14,6 +14,9 @@ export class Form extends Component {
     }
 
     render() {
+
+        const { location, divesite, maxDepth, bottomTime, visibility, waterTemp, weight, notes } = this.state
+
         return (
             <div className='form-container'>
                 <div className='row'>
