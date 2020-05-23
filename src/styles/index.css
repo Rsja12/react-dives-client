@@ -25,6 +25,6 @@ body {
 
 /*  **************************** NAVBAR  ***************************** */
 
-.nav.nav-item > button {
+.nav.justify-content-end .btn.btn-light:hover {
     background-color: rgb(255, 66, 66);
 }
