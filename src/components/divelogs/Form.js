@@ -18,7 +18,7 @@ export class Form extends Component {
         const { location, divesite, maxDepth, bottomTime, visibility, waterTemp, weight, notes } = this.state
 
         return (
-            <form className='form-container'>
+            <form className='form-container container-fluid'>
                 <div className='row'>
                     <div className='col-md-6'>
                         <label htmlFor='location'>Location</label>
