@@ -15,7 +15,7 @@ export class Form extends Component {
         notes: ''
     }
 
-    handleTextInput = e => {
+    handleInput = e => {
         this.setState({
             [e.target.name]: e.target.value
         })
@@ -35,7 +35,7 @@ export class Form extends Component {
                             type='text'
                             id='location'
                             name='location'
-                            onChange={ this.handleTextInput }
+                            onChange={ this.handleInput }
                             value={ location }
                         />
                     </div>
@@ -46,7 +46,7 @@ export class Form extends Component {
                             type='text'
                             id='divesite'
                             name='divesite'
-                            onChange={ this.handleTextInput }
+                            onChange={ this.handleInput }
                             value={ divesite }
                         />
                     </div>
@@ -60,7 +60,7 @@ export class Form extends Component {
                             type='number'
                             id='maxDepth'
                             name='maxDepth'
-                            onChange={ this.handleTextInput }
+                            onChange={ this.handleInput }
                             value={ maxDepth }
                         />
                     </div>
@@ -71,7 +71,7 @@ export class Form extends Component {
                             type='number'
                             id='bottomTime'
                             name='bottomTime'
-                            onChange={ this.handleTextInput }
+                            onChange={ this.handleInput }
                             value={ bottomTime }
                         />
                     </div>
@@ -85,7 +85,7 @@ export class Form extends Component {
                             type='number'
                             id='visibility'
                             name='visibility'
-                            onChange={ this.handleTextInput }
+                            onChange={ this.handleInput }
                             value={ visibility }
                         />
                     </div>
@@ -96,7 +96,7 @@ export class Form extends Component {
                             type='number'
                             id='waterTemp'
                             name='waterTemp'
-                            onChange={ this.handleTextInput }
+                            onChange={ this.handleInput }
                             value={ waterTemp }
                         />
                     </div>
@@ -107,7 +107,7 @@ export class Form extends Component {
                             type='number'
                             id='weight'
                             name='weight'
-                            onChange={ this.handleTextInput }
+                            onChange={ this.handleInput }
                             value={ weight }
                         />
                     </div>
@@ -120,7 +120,7 @@ export class Form extends Component {
                             className='form-control'
                             id='notes'
                             name='notes'
-                            onChange={ this.handleTextInput }
+                            onChange={ this.handleInput }
                             value={ notes }
                         />
                     </div>
