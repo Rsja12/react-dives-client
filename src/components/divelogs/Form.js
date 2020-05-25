@@ -31,7 +31,7 @@ export class Form extends Component {
         const { location, divesite, maxDepth, bottomTime, visibility, waterTemp, weight, notes } = this.state
 
         return (
-            <form className='form-container container-fluid' onSubmit={ this.handleSubmit }>
+            <form className='center-container container-fluid' onSubmit={ this.handleSubmit }>
                 <div className='row'>
                     <div className='col-md-6'>
                         <label htmlFor='location'>Location</label>
