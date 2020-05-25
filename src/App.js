@@ -7,11 +7,12 @@ import Error from './components/Error'
 import PrivateRoute from './routes/PrivateRoute'
 import PublicRoute from './routes/PublicRoute'
 import Dashboard from './components/divelogs/Dashboard'
+import LogsIndex from './components/divelogs/LogsIndex'
 import CreateLog from './components/divelogs/CreateLog'
 import ShowLog from './components/divelogs/ShowLog'
 import EditLog from './components/divelogs/EditLog'
 import DeleteLog from './components/divelogs/DeleteLog'
-import About from './components/About'
+
 
 const App = () => {
     return (
@@ -22,7 +23,7 @@ const App = () => {
                     <Switch>
                         <PublicRoute exact path='/' component={ HomePage } />
                         <PrivateRoute exact path='/dashboard' component={ Dashboard } />
-                        <PrivateRoute exact path='/about' component={ About } />
+                        <PrivateRoute exact path='/logs' component={ LogsIndex } />
                         <PrivateRoute exact path='/logs/new' component={ CreateLog } />
                         <PrivateRoute exact path='/logs/:id' component={ ShowLog } />
                         <PrivateRoute exact path='/logs/edit/:id' component={ EditLog } />
