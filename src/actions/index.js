@@ -16,11 +16,11 @@ export const signOut = () => {
 export const fetchLogs = () => {
 
     return async dispatch => {
-        const response = await axios.get('/logs').data 
+        const response = await axios.get('/logs')
 
         dispatch({
             type: 'FETCH_LOGS',
-            payload: response
+            payload: response.data
         })
     }
 }
@@ -31,7 +31,7 @@ export const fetchLog = id => {
 
         dispatch({
             type: 'FETCH_LOG',
-            payload: response
+            payload: response.data
         })
     }
 }
@@ -39,11 +39,11 @@ export const fetchLog = id => {
 export const createLog = formValues => {
 
     return async dispatch => {
-        const response = await axios.post('/logs', formValues).data
-
+        const response = await axios.post('/logs', formValues)
+        console.log(response)
         dispatch({
             type: 'CREATE_LOG',
-            payload: response
+            payload: response.data
         })
     }
 
@@ -52,11 +52,11 @@ export const createLog = formValues => {
 export const editLog = (id, formValues) => {
 
     return async dispatch => {
-        const response = await axios.patch(`/logs/${id}`, formValues).data
+        const response = await axios.patch(`/logs/${id}`, formValues)
 
         dispatch({
             type: 'EDIT_LOG',
-            payload: response
+            payload: response.data
         })
     }
 
