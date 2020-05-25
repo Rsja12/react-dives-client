@@ -1,4 +1,4 @@
-import streams from '../apis/logs'
+import axios from '../apis/logs'
 
 export const signIn = userId => {
     return {
@@ -15,6 +15,6 @@ export const signOut = () => {
 
 export const createLog = formValues => {
     return async dispatch => {
-        streams.post('/logs', formValues)
+        axios.post('/logs', formValues)
     }
 }
