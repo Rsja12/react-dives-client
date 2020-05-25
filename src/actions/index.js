@@ -15,6 +15,10 @@ export const signOut = () => {
 
 export const createLog = formValues => {
     return async dispatch => {
-        axios.post('/logs', formValues)
+        const response = await axios.post('/logs', formValues).data
+        dispatch({
+            type: 'CREATE_LOG',
+            payload: response
+        })
     }
 }
