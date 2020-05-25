@@ -129,7 +129,6 @@ export class Form extends Component {
                     <div className='col-lg-8'>
                         <label htmlFor='notes'>Notes</label>
                         <textarea 
-                            autoComplete='off'
                             className='form-control'
                             id='notes'
                             name='notes'
