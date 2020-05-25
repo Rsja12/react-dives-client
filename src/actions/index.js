@@ -12,3 +12,9 @@ export const signOut = () => {
         type: 'SIGN_OUT'
     }
 }
+
+export const createLog = formValues => {
+    return async dispatch => {
+        streams.post('/logs', formValues)
+    }
+}

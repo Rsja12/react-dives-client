@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { createLog } from '../../actions'
 
 export class Form extends Component {
 
@@ -11,6 +13,12 @@ export class Form extends Component {
         waterTemp: null,
         weight: null,
         notes: ''
+    }
+
+    handleTextInput = e => {
+        this.setState({
+            [e.target.name]: e.target.value
+        })
     }
 
     render() {
@@ -26,6 +34,7 @@ export class Form extends Component {
                             className='form-control'
                             type='text'
                             id='location'
+                            name='location'
                             onChange={ this.handleTextInput }
                             value={ location }
                         />
@@ -36,6 +45,7 @@ export class Form extends Component {
                             className='form-control'
                             type='text'
                             id='divesite'
+                            name='divesite'
                             onChange={ this.handleTextInput }
                             value={ divesite }
                         />
@@ -49,6 +59,7 @@ export class Form extends Component {
                             className='form-control'
                             type='number'
                             id='maxDepth'
+                            name='maxDepth'
                             onChange={ this.handleTextInput }
                             value={ maxDepth }
                         />
@@ -59,6 +70,7 @@ export class Form extends Component {
                             className='form-control'
                             type='number'
                             id='bottomTime'
+                            name='bottomTime'
                             onChange={ this.handleTextInput }
                             value={ bottomTime }
                         />
@@ -72,6 +84,7 @@ export class Form extends Component {
                             className='form-control'
                             type='number'
                             id='visibility'
+                            name='visibility'
                             onChange={ this.handleTextInput }
                             value={ visibility }
                         />
@@ -82,6 +95,7 @@ export class Form extends Component {
                             className='form-control'
                             type='number'
                             id='waterTemp'
+                            name='waterTemp'
                             onChange={ this.handleTextInput }
                             value={ waterTemp }
                         />
@@ -92,6 +106,7 @@ export class Form extends Component {
                             className='form-control'
                             type='number'
                             id='weight'
+                            name='weight'
                             onChange={ this.handleTextInput }
                             value={ weight }
                         />
@@ -104,6 +119,7 @@ export class Form extends Component {
                         <textarea 
                             className='form-control'
                             id='notes'
+                            name='notes'
                             onChange={ this.handleTextInput }
                             value={ notes }
                         />
@@ -125,4 +141,4 @@ export class Form extends Component {
     }
 }
 
-export default Form
+export default connect(null, { createLog })(Form)
