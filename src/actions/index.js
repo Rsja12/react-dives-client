@@ -49,10 +49,10 @@ export const createLog = formValues => {
 
 }
 
-export const editLog = id => {
+export const editLog = (id, formValues) => {
 
     return async dispatch => {
-        const response = await axios.patch(`/logs/${id}`).data
+        const response = await axios.patch(`/logs/${id}`, formValues).data
 
         dispatch({
             type: 'EDIT_LOG',
