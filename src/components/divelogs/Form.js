@@ -7,11 +7,11 @@ export class Form extends Component {
     state = {
         location: '',
         divesite: '',
-        maxDepth: null,
-        bottomTime: null,
-        visibility: null,
-        waterTemp: null,
-        weight: null,
+        maxDepth: '',
+        bottomTime: '',
+        visibility: '',
+        waterTemp: '',
+        weight: '',
         notes: ''
     }
 
@@ -36,6 +36,7 @@ export class Form extends Component {
                     <div className='col-md-6'>
                         <label htmlFor='location'>Location</label>
                         <input 
+                            autoComplete='off'
                             className='form-control'
                             type='text'
                             id='location'
@@ -47,6 +48,7 @@ export class Form extends Component {
                     <div className='col-md-6'>
                         <label htmlFor='divesite'>Divesite</label>
                         <input 
+                            autoComplete='off'
                             className='form-control'
                             type='text'
                             id='divesite'
@@ -61,6 +63,7 @@ export class Form extends Component {
                     <div className='col-md-6'>
                         <label htmlFor='maxDepth'>maxDepth</label>
                         <input 
+                            autoComplete='off'
                             className='form-control'
                             type='number'
                             id='maxDepth'
@@ -72,6 +75,7 @@ export class Form extends Component {
                     <div className='col-md-6'>
                         <label htmlFor='bottomtime'>Bottom Time</label>
                         <input 
+                            autoComplete='off'
                             className='form-control'
                             type='number'
                             id='bottomTime'
@@ -85,7 +89,8 @@ export class Form extends Component {
                 <div className='row'>
                     <div className='col-md-4'>
                         <label htmlFor='visiblity'>Visiblity</label>
-                        <input 
+                        <input
+                            autoComplete='off' 
                             className='form-control'
                             type='number'
                             id='visibility'
@@ -96,7 +101,8 @@ export class Form extends Component {
                     </div>
                     <div className='col-md-4'>
                         <label htmlFor='waterTemp'>Water Temp</label>
-                        <input 
+                        <input  
+                            autoComplete='off'
                             className='form-control'
                             type='number'
                             id='waterTemp'
@@ -108,6 +114,7 @@ export class Form extends Component {
                     <div className='col-md-4'>
                         <label htmlFor='weight'>Weight</label>
                         <input 
+                            autoComplete='off'
                             className='form-control'
                             type='number'
                             id='weight'
@@ -122,6 +129,7 @@ export class Form extends Component {
                     <div className='col-lg-8'>
                         <label htmlFor='notes'>Notes</label>
                         <textarea 
+                            autoComplete='off'
                             className='form-control'
                             id='notes'
                             name='notes'
