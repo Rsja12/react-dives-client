@@ -1,5 +1,7 @@
 import axios from '../apis/logs'
 
+import history from '../history'
+
 export const signIn = userId => {
     return {
         type: 'SIGN_IN',
@@ -48,6 +50,7 @@ export const createLog = formValues => {
             type: 'CREATE_LOG',
             payload: response.data
         })
+        history.push('/logs')
     }
 
 }
