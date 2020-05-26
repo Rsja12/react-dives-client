@@ -12,11 +12,14 @@ export class LogsIndex extends Component {
 
     renderLogs() {
         return this.props.logs.map( log => {
-            return(
-                <div className='center-container'>
-                    <LogItem log={ log } key={ log.id } />
-                </div>
-            )
+            if (this.props.currentUserId === log.userId) {
+                return(
+                    <div className='center-container'>
+                        <LogItem log={ log } key={ log.id } />
+                    </div>
+                )
+            }
+            return null 
         } )
     }
     
@@ -30,7 +33,8 @@ export class LogsIndex extends Component {
 }
 
 const mapStateToProps = state => ({
-    logs: Object.values( state.logs )
+    logs: Object.values( state.logs ),
+    currentUserId: state.auth.userId
 })
 
 export default connect(mapStateToProps, { fetchLogs })(LogsIndex)
