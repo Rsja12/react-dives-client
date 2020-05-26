@@ -39,7 +39,9 @@ export const fetchLog = id => {
 export const createLog = formValues => {
 
     return async dispatch => {
-        const response = await axios.post('/logs', formValues)
+        const date = new Date().toLocaleDateString()
+        
+        const response = await axios.post('/logs', {...formValues, date})
         console.log(response)
         dispatch({
             type: 'CREATE_LOG',
