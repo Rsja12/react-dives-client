@@ -5,7 +5,6 @@ import { createLog } from '../../actions'
 export class Form extends Component {
 
     state = {
-        date: '',
         location: '',
         divesite: '',
         maxDepth: '',
