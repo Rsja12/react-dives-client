@@ -7,6 +7,8 @@ export class LogsIndex extends Component {
     componentDidMount(){
         this.props.fetchLogs()
     }
+
+    
     
     render() {
         console.log(this.props.logs)
