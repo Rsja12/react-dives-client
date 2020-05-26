@@ -2,17 +2,14 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Route, Redirect } from 'react-router-dom'
 
+
 const PrivateRoute = ({ isSignedIn, component: Component, ...rest }) => {
     
     return(
         <div>
-            <Route {...rest} component={ props => (
-                isSignedIn ? (
-                    <Component {...props} />
-                ) : (
-                    <Redirect to='/' />
-                )
-            ) } />
+            <Route {...rest} render={ (props) => (
+                isSignedIn === true ? <Component {...props} /> : <Redirect to='/' />
+            )} />
         </div>
     )
    

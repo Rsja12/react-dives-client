@@ -18,14 +18,12 @@ const NavBar = ({ isSignedIn }) => {
                         </Link>
                     </li>
                 </ul>
-                
-                <div className='nav justify-content-end'>
-                    <GoogleAuth />
-                </div>
+                <GoogleAuth />
             </nav>
         )
     }
-        return null
+    
+    return null
 }
 
 const mapStateToProps = state => ({

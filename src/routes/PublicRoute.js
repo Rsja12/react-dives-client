@@ -6,13 +6,9 @@ const PublicRoute = ({ isSignedIn, component: Component, ...rest }) => {
     
     return(
         <div>
-            <Route {...rest} component={ props => (
-                isSignedIn ? (
-                    <Redirect to='/dashboard' />
-                    ) : (
-                    <Component {...props} />
-                )
-            ) } />
+            <Route {...rest} render={ (props) => (
+                isSignedIn === true ? <Redirect to='/dashboard' /> : <Component {...props} />
+                )} />
         </div>
     )
 
