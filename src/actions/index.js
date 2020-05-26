@@ -44,7 +44,6 @@ export const createLog = formValues => {
         const { userId } = getState().auth
         
         const response = await axios.post('/logs', {...formValues, date, userId})
-        console.log(response)
         dispatch({
             type: 'CREATE_LOG',
             payload: response.data
