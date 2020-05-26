@@ -1,7 +1,15 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { fetchLogs } from '../../actions'
 
 export class LogsIndex extends Component {
+
+    componentDidMount(){
+        this.props.fetchLogs()
+    }
+    
     render() {
+        console.log(this.props.logs)
         return (
             <div>
                 Index
@@ -10,4 +18,8 @@ export class LogsIndex extends Component {
     }
 }
 
-export default LogsIndex
+const mapStateToProps = state => ({
+    logs: Object.values( state.logs )
+})
+
+export default connect(mapStateToProps, { fetchLogs })(LogsIndex)
