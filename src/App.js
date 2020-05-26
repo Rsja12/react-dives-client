@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { Router, Route, Switch } from 'react-router-dom'
 
 import HomePage from './components/HomePage'
 import NavBar from './components/NavBar'
@@ -12,12 +12,12 @@ import CreateLog from './components/divelogs/CreateLog'
 import ShowLog from './components/divelogs/ShowLog'
 import EditLog from './components/divelogs/EditLog'
 import DeleteLog from './components/divelogs/DeleteLog'
-
+import history from './history'
 
 const App = () => {
     return (
         <div>
-            <BrowserRouter>
+            <Router history={ history }>
                 <div>
                     <NavBar />
                     <Switch>
@@ -31,7 +31,7 @@ const App = () => {
                         <Route component={ Error } />
                     </Switch>
                 </div>
-            </BrowserRouter>
+            </Router>
         </div>
     )
 }
