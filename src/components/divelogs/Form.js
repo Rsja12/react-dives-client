@@ -61,7 +61,7 @@ export class Form extends Component {
 
                 <div className='row'>
                     <div className='col-md-6'>
-                        <label htmlFor='maxDepth'>maxDepth</label>
+                        <label htmlFor='maxDepth'>Max Depth</label>
                         <input 
                             autoComplete='off'
                             className='form-control'

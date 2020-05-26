@@ -6,6 +6,12 @@ body {
     padding: 20% 0;
 }
 
+.center-container {
+    text-align: center;
+    width: 50%;
+    margin: 7% auto;
+}
+
 /***************************** HOMEPAGE  ********************************** */
 .homePage {
     background-image: url('https://images.unsplash.com/photo-1530053969600-caed2596d242?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80');
@@ -27,13 +33,4 @@ body {
 
 .nav.justify-content-end .btn.btn-light:hover {
     background-color: rgb(255, 66, 66);
-}
-
-
-/***************************************** FORM  ******************************************** */
-
-.center-container {
-    text-align: center;
-    width: 50%;
-    margin: 7% auto;
 }
