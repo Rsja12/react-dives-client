@@ -4,11 +4,12 @@ import { Link } from 'react-router-dom'
 const LogItem = ({ log }) => {
     return (
         <Link to={ `/logs/${log.id}` }>
-            <div className='card'>
-                <div className='card-header'>Logged on { log.date }</div>
-                <div className='card-body'>
-                    <div className='card-title'>{ log.location} - { log.divesite }</div>
-                    <div className='card-body'>{ log.notes }</div>
+            <div className='row'>
+                <div className='col-sm-11'>
+                    <div className='card'>
+                        <div className='card-title text-right'>Logged on { log.date }</div>
+                        <div className='card-title text-center'>{ log.location } - { log.divesite}</div>
+                    </div>
                 </div>
             </div>
         </Link>
