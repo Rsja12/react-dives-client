@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
 import { fetchLogs } from '../../actions'
 
@@ -19,15 +19,15 @@ export class LogsIndex extends Component {
                     </div>
                 )
             }
-            return null 
-        } )
+            return null
+        })
     }
     
     render() {
         return (
-            <div>
+            <Fragment>
                 { this.renderLogs() }
-            </div>
+            </Fragment>
         )
     }
 }
