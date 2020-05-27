@@ -4,6 +4,7 @@ import Modal from 'react-bootstrap/Modal'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 import { deleteLog, fetchLog } from '../../actions'
+import history from '../../history'
 
 export class DeleteLog extends Component {
 
@@ -19,6 +20,14 @@ export class DeleteLog extends Component {
         this.setState({
             isOpen: false
         })
+        const id = this.props.match.params.id
+        history.push(`/logs/${id}`)
+    }
+
+    handleSubmit = e => {
+        e.preventDefault()
+        this.props.deleteLog( this.props.match.params.id )
+        history.push('/logs')
     }
 
     render() {
@@ -30,7 +39,21 @@ export class DeleteLog extends Component {
                 <Modal.Header>
                     <Modal.Title>Log #{ this.props.log.id }</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>Are you sure? This will permanently delete this log</Modal.Body>
+                <Modal.Body>
+                    Are you sure? This will permanently delete this log
+                </Modal.Body>
+                <Modal.Footer>
+                    <button 
+                    onClick={ this.hideModal }
+                    className='btn btn-dark'>
+                        Cancel
+                    </button>
+                    <button 
+                    onClick={ this.handleSubmit }
+                    className='btn btn-danger'>
+                        Delete
+                    </button>
+                </Modal.Footer>
             </Modal>
         )
     }
