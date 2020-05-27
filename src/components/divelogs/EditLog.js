@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 import { fetchLog } from '../../actions'
+import Form from './Form'
 
 export class EditLog extends Component {
 
@@ -9,10 +10,23 @@ export class EditLog extends Component {
         this.props.fetchLog( this.props.match.params.id )
     }
 
+ 
+
     render() {
+        const { location, divesite, maxDepth, bottomTime, visibility, waterTemp, weight, notes } = this.props.log
         return (
             <div>
-                Edit
+                <h2 className='text-center'>Edit This Dive</h2>
+                <Form
+                    location={ location }
+                    divesite={ divesite }
+                    maxDepth={ maxDepth }
+                    bottomTime={ bottomTime }
+                    visibility={ visibility }
+                    waterTemp={ waterTemp }
+                    weight={ weight }
+                    notes={ notes }
+                />
             </div>
         )
     }

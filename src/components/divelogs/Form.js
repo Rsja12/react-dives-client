@@ -3,14 +3,14 @@ import React, { Component } from 'react'
 export class Form extends Component {
 
     state = {
-        location: '',
-        divesite: '',
-        maxDepth: '',
-        bottomTime: '',
-        visibility: '',
-        waterTemp: '',
-        weight: '',
-        notes: ''
+        location: this.props.location || '',
+        divesite: this.props.divesite || '',
+        maxDepth: this.props.maxDepth || '',
+        bottomTime: this.props.bottomTime || '',
+        visibility: this.props.visibility || '',
+        waterTemp: this.props.waterTemp || '',
+        weight: this.props.weight || '',
+        notes: this.props.notes || ''
     }
 
     handleInput = e => {
