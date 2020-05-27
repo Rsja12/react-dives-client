@@ -7,9 +7,9 @@ const ShowLog = ({ log }) => {
         <Fragment>
             <div className='center-container'>
                 <div className='row'>
-                    <div className='col'>
+                    <div className='col text-center'>
                         <ul className="list-group list-group-flush">
-                            <li className="list-group-item">Date: {log.date}</li>
+                            <li className="list-group-item"><span className='font-weight-bold pull-left'>Date:</span><span className='pull-right'> {log.date}</span></li>
                             <li className="list-group-item">Location: {log.location}</li>
                             <li className="list-group-item">Divesite: {log.divesite}</li>
                             <li className="list-group-item">Max Depth: {log.maxDepth} Ft.</li>
@@ -25,15 +25,15 @@ const ShowLog = ({ log }) => {
                         </ul>
                     </div>
                 </div>
-                <div className='row justify-content-center'>
-                    <div className='col-md-5'>
+                <div className='row justify-content-center show-buttons'>
+                    <div className='col-md-6'>
                         <Link 
                         to={`/logs/edit/${log.id}`} 
                         className='btn btn-block btn-dark'>
                             Edit this dive
                         </Link>
                     </div>
-                    <div className='col-md-5'>
+                    <div className='col-md-6'>
                         <Link
                         to={`/logs/delete/${log.id}`}
                         className='btn btn-danger btn-block'>
