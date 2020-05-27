@@ -9,6 +9,7 @@ const NavBar = ({ isSignedIn }) => {
     if ( isSignedIn ) {
         return (
             <nav className='navbar navbar-dark bg-dark'>
+
                 <ul className='nav'>
                     <li className='nav-item'>
                         <Link 
@@ -18,6 +19,23 @@ const NavBar = ({ isSignedIn }) => {
                         </Link>
                     </li>
                 </ul>
+
+                {/* <ul className='nav justify-content-center'>
+                    <li className='nav-item'>
+                        <Link 
+                        className='nav-link text-white'
+                        to='/logs/new'>
+                            Add A Dive
+                        </Link>
+                    </li>
+                    <li className='nav-item'>
+                        <Link 
+                        className='nav-link text-white'
+                        to='/logs'>
+                            Logbook
+                        </Link>
+                    </li>
+                </ul> */}
                 <GoogleAuth />
             </nav>
         )

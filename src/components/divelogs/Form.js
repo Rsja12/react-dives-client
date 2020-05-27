@@ -123,7 +123,7 @@ export class Form extends Component {
                     </div>
                 </div>
 
-                <div className='row'>
+                <div className='row justify-content-center'>
                     <div className='col-lg-8'>
                         <label htmlFor='notes'>Notes</label>
                         <textarea 
@@ -136,7 +136,7 @@ export class Form extends Component {
                     </div>
                 </div>
 
-                <div className='row'>
+                <div className='row justify-content-center'>
                     <div className='col-md-8'>
                         <button 
                             type='submit'
