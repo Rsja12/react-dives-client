@@ -8,12 +8,11 @@ const PrivateRoute = ({ isSignedIn, component: Component, ...rest }) => {
     return(
         <div>
             <Route {...rest} render={ (props) => (
-                isSignedIn === true ? <Component {...props} /> : <Redirect to='/' />
+                isSignedIn ? <Component {...props} /> : <Redirect to='/' />
             )} />
         </div>
     )
    
-
 }
 
 const mapStateToProps = state => ({
