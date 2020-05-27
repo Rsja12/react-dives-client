@@ -64,6 +64,7 @@ export const editLog = (id, formValues) => {
             type: 'EDIT_LOG',
             payload: response.data
         })
+        history.push(`/logs/${id}`)
     }
 
 }
