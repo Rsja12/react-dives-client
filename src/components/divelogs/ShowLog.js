@@ -26,8 +26,8 @@ const ShowLog = ({ log }) => {
                         </Link>
                     </div>
                     <div className='col-md-5'>
-                        <Link 
-                        to={`/logs/delete/${log.id}`} 
+                        <Link
+                        to={`/logs/delete/${log.id}`}
                         className='btn btn-danger btn-block'>
                             Delete this dive
                         </Link>
