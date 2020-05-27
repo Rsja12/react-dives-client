@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { createLog } from '../../actions'
 
 export class Form extends Component {
 
@@ -23,7 +21,7 @@ export class Form extends Component {
 
     handleSubmit = e => {
         e.preventDefault()
-        this.props.createLog( this.state )
+        this.props.submit( this.state )
     }
 
     render() {
@@ -153,4 +151,4 @@ export class Form extends Component {
     }
 }
 
-export default connect(null, { createLog })(Form)
+export default Form
