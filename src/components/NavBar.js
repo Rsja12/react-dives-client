@@ -23,7 +23,7 @@ const NavBar = ({ isSignedIn }) => {
         )
     }
     
-    return null
+    return null 
 }
 
 const mapStateToProps = state => ({

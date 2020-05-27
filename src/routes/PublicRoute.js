@@ -3,16 +3,16 @@ import { connect } from 'react-redux'
 import { Route, Redirect } from 'react-router-dom'
 
 const PublicRoute = ({ isSignedIn, component: Component, ...rest }) => {
-    
     return(
         <div>
             <Route {...rest} render={ (props) => (
-                isSignedIn === true ? <Redirect to='/dashboard' /> : <Component {...props} />
-                )} />
+                isSignedIn ? <Redirect to='/dashboard' /> : <Component {...props} />
+            )} />
         </div>
     )
 
 }
+
 
 const mapStateToProps = state => ({
     isSignedIn: state.auth.isSignedIn

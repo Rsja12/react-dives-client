@@ -22,7 +22,7 @@ const App = () => {
                     <NavBar />
                     <Switch>
                         <PublicRoute exact path='/' component={ HomePage } />
-                        <PrivateRoute exact path='/dashboard' component={ Dashboard } />
+                        <PrivateRoute exact path='/dashboard' component={ Dashboard }/>
                         <PrivateRoute exact path='/logs' component={ LogsIndex } />
                         <PrivateRoute exact path='/logs/new' component={ CreateLog } />
                         <PrivateRoute exact path='/logs/:id' component={ ShowLog } />

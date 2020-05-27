@@ -5,6 +5,7 @@ import '../../styles/index.css'
 
 export class Dashboard extends Component {
     render() {
+        console.log(this.props)
         return (
             <div className='center-container'>
                 <div className='row'>

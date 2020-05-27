@@ -15,6 +15,7 @@ export class EditLog extends Component {
     }
 
     render() {
+        
         const { location, divesite, maxDepth, bottomTime, visibility, waterTemp, weight, notes } = this.props.log
         return (
             <div>

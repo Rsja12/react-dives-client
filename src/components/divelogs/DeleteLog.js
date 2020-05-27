@@ -31,7 +31,6 @@ export class DeleteLog extends Component {
     }
 
     render() {
-        console.log(this.props.log)
         return (
             <Modal 
             show={this.state.isOpen}
