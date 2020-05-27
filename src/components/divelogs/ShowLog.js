@@ -9,19 +9,19 @@ const ShowLog = ({ log }) => {
                 <div className='row'>
                     <div className='col text-center'>
                         <ul className="list-group list-group-flush">
-                            <li className="list-group-item"><span className='font-weight-bold pull-left'>Date:</span><span className='pull-right'> {log.date}</span></li>
-                            <li className="list-group-item">Location: {log.location}</li>
-                            <li className="list-group-item">Divesite: {log.divesite}</li>
-                            <li className="list-group-item">Max Depth: {log.maxDepth} Ft.</li>
-                            <li className="list-group-item">Bottom Time: {log.bottomTime} Min.</li>
-                            <li className="list-group-item">Visibility: {log.visibility} Ft.</li>
-                            <li className="list-group-item">Water Temp: {log.waterTemp} F</li>
-                            <li className="list-group-item">Weight: {log.weight} Lbs.</li>
+                            <li className="list-group-item"><span className='text-uppercase font-weight-bold pull-left'>Date:</span><span className='pull-right'> {log.date}</span></li>
+                            <li className="list-group-item"><span className='text-uppercase font-weight-bold pull-left'>Location:</span> {log.location}</li>
+                            <li className="list-group-item"><span className='text-uppercase font-weight-bold pull-left'>Divesite:</span> {log.divesite}</li>
+                            <li className="list-group-item"><span className='text-uppercase font-weight-bold pull-left'>Max Depth:</span> {log.maxDepth} Ft.</li>
+                            <li className="list-group-item"><span className='text-uppercase font-weight-bold pull-left'>Bottom Time:</span> {log.bottomTime} Min.</li>
+                            <li className="list-group-item"><span className='text-uppercase font-weight-bold pull-left'>Visibility:</span> {log.visibility} Ft.</li>
+                            <li className="list-group-item"><span className='text-uppercase font-weight-bold pull-left'>Water Temp:</span> {log.waterTemp} F</li>
+                            <li className="list-group-item"><span className='text-uppercase font-weight-bold pull-left'>Weight:</span> {log.weight} Lbs.</li>
                         </ul>
                     </div>
                     <div className='col'>
                         <ul className="list-group list-group-flush">
-                            <li className="list-group-item">Notes: {log.notes}</li>
+                            <li className="list-group-item"><span className='text-uppercase font-weight-bold pull-left'><p>Notes</p></span> {log.notes}</li>
                         </ul>
                     </div>
                 </div>
