@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 
 import { fetchLog, editLog } from '../../actions'
 import Form from './Form'
+import BackButton from '../BackButton'
 
 export class EditLog extends Component {
 
@@ -16,9 +17,10 @@ export class EditLog extends Component {
 
     render() {
         
-        const { location, divesite, maxDepth, bottomTime, visibility, waterTemp, weight, notes } = this.props.log
+        const { location, divesite, maxDepth, bottomTime, visibility, waterTemp, weight, notes, id } = this.props.log
         return (
             <div>
+                <BackButton path={`/logs/${id}`} text={ 'Nevermind' } />
                 <h2 className='text-center'>Edit This Dive</h2>
                 <Form
                     location={ location }

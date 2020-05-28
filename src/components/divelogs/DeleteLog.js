@@ -33,13 +33,14 @@ export class DeleteLog extends Component {
     render() {
         return (
             <Modal 
+            centered
             show={this.state.isOpen}
             onHide={this.hideModal}>
                 <Modal.Header>
-                    <Modal.Title>Log #{ this.props.log.id }</Modal.Title>
+                    <Modal.Title>{ this.props.log.divesite } - { this.props.log.location }</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    Are you sure? This will permanently delete this log
+                    Are you sure? This will permanently delete this dive from your logbook
                 </Modal.Body>
                 <Modal.Footer>
                     <button 

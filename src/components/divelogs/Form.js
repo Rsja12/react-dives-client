@@ -139,8 +139,9 @@ export class Form extends Component {
                 <div className='row justify-content-center'>
                     <div className='col-md-8'>
                         <button 
+                            style={{ marginTop: '7%' }}
                             type='submit'
-                            className='btn btn-dark btn-block'>
+                            className='btn btn-success btn-block'>
                             Submit
                         </button>
                     </div>

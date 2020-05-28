@@ -1,7 +1,8 @@
 import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
-import { fetchLogs } from '../../actions'
+import { Link } from 'react-router-dom'
 
+import { fetchLogs } from '../../actions'
 import LogItem from './LogItem'
 
 export class LogsIndex extends Component {
@@ -26,6 +27,9 @@ export class LogsIndex extends Component {
     render() {
         return (
             <Fragment>
+                <Link to='/logs/new' style={{ textDecoration: 'none' }}>
+                    <button className='btn btn-dark'>+ Add Dive</button>
+                </Link>
                 { this.renderLogs() }
             </Fragment>
         )
