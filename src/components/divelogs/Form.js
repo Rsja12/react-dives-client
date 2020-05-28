@@ -59,7 +59,7 @@ export class Form extends Component {
 
                 <div className='row'>
                     <div className='col-md-6'>
-                        <label htmlFor='maxDepth'>Max Depth</label>
+                        <label htmlFor='maxDepth'>Max Depth (Ft)</label>
                         <input 
                             autoComplete='off'
                             className='form-control'
@@ -71,7 +71,7 @@ export class Form extends Component {
                         />
                     </div>
                     <div className='col-md-6'>
-                        <label htmlFor='bottomtime'>Bottom Time</label>
+                        <label htmlFor='bottomtime'>Bottom Time (Min)</label>
                         <input 
                             autoComplete='off'
                             className='form-control'
@@ -86,7 +86,7 @@ export class Form extends Component {
 
                 <div className='row'>
                     <div className='col-md-4'>
-                        <label htmlFor='visiblity'>Visiblity</label>
+                        <label htmlFor='visiblity'>Visiblity (Ft)</label>
                         <input
                             autoComplete='off' 
                             className='form-control'
@@ -98,7 +98,7 @@ export class Form extends Component {
                         />
                     </div>
                     <div className='col-md-4'>
-                        <label htmlFor='waterTemp'>Water Temp</label>
+                        <label htmlFor='waterTemp'>Water Temp (F)</label>
                         <input  
                             autoComplete='off'
                             className='form-control'
@@ -110,7 +110,7 @@ export class Form extends Component {
                         />
                     </div>
                     <div className='col-md-4'>
-                        <label htmlFor='weight'>Weight</label>
+                        <label htmlFor='weight'>Weight (Lbs)</label>
                         <input 
                             autoComplete='off'
                             className='form-control'
