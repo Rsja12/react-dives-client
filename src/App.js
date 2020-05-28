@@ -6,7 +6,6 @@ import NavBar from './components/NavBar'
 import Error from './components/Error'
 import PrivateRoute from './routes/PrivateRoute'
 import PublicRoute from './routes/PublicRoute'
-import Dashboard from './components/divelogs/Dashboard'
 import LogsIndex from './components/divelogs/LogsIndex'
 import CreateLog from './components/divelogs/CreateLog'
 import ShowLog from './components/divelogs/ShowLog'
@@ -22,7 +21,6 @@ const App = () => {
                     <NavBar />
                     <Switch>
                         <PublicRoute exact path='/' component={ HomePage } />
-                        <PrivateRoute exact path='/dashboard' component={ Dashboard }/>
                         <PrivateRoute exact path='/logs' component={ LogsIndex } />
                         <PrivateRoute exact path='/logs/new' component={ CreateLog } />
                         <PrivateRoute exact path='/logs/:id' component={ ShowLog } />

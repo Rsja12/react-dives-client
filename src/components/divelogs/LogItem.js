@@ -8,7 +8,7 @@ const LogItem = ({ log }) => {
                 <div className='col-sm-12'>
                     <ul className='list-group'>
                         <h3>
-                            <li className='list-group-item text-center text-dark'>{ log.divesite } - { log.location} on { log.date }</li>
+                            <li className='list-group-item text-center text-dark'>{ log.divesite } - { log.location} - { log.date }</li>
                         </h3>
                     </ul>
                 </div>
