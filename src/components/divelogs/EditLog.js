@@ -21,7 +21,7 @@ export class EditLog extends Component {
         return (
             <div>
                 <BackButton path={`/logs/${id}`} text={ 'Nevermind' } />
-                <h2 className='text-center'>Edit This Dive</h2>
+                <h2 className='text-center edit-page'>Edit This Dive</h2>
                 <Form
                     location={ location }
                     divesite={ divesite }

@@ -22,12 +22,12 @@ export class LogsIndex extends Component {
         const { currentPage, logsPerPage } = this.state
         const lastLogIdx = currentPage * logsPerPage
         const firstLogIdx = lastLogIdx - logsPerPage
-        const currentLogs = this.props.logs.slice( firstLogIdx, lastLogIdx )
+        
+        // sort logs to get current logs
+        const sortedLogs = this.props.logs.sort( (a, b) => a.date < b.date ? 1 : -1 )
+        const currentLogs = sortedLogs.slice( firstLogIdx, lastLogIdx )
 
-        // sort current logs
-        const sortedLogs = currentLogs.sort( (a, b) => a.date < b.date ? 1 : -1 )
-
-        return sortedLogs.map( log => {
+        return currentLogs.map( log => {
             if (this.props.currentUserId === log.userId) {
                 return(
                     <div className='center-container'>
