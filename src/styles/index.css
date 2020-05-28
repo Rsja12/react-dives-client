@@ -10,7 +10,18 @@ body {
     text-align: center;
     width: 50%;
     margin: 0 auto;
-    /* padding-top: 7%; */
+}
+
+.top-row {
+    width: 75%;
+    margin: 0 auto;
+    margin-top: 5%;
+    margin-bottom: 3%;
+}
+
+.bottom-row {
+    width: 75%;
+    margin: 0 auto;
 }
 
 /***************************** HOMEPAGE  ********************************** */
@@ -32,9 +43,7 @@ body {
 
 /*  **************************** NAVBAR  ***************************** */
 
-.navbar {
-    margin-bottom: 7%;
-}
+
 
 .nav.justify-content-end .btn.btn-light:hover {
     background-color: rgb(255, 66, 66);
