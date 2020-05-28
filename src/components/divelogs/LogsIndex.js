@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import { fetchLogs } from '../../actions'
 
 import LogItem from './LogItem'
-import CardLink from '../CardLink'
 
 export class LogsIndex extends Component {
 
@@ -27,13 +26,6 @@ export class LogsIndex extends Component {
     render() {
         return (
             <Fragment>
-                <div className='center-container'>
-                    <div className='row'>
-                        <div className='col-md-6'>
-                            <CardLink title={ 'Log a Dive' } path={ '/logs/new' } />
-                        </div>
-                    </div>
-                 </div>
                 { this.renderLogs() }
             </Fragment>
         )
