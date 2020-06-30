@@ -52,7 +52,7 @@ export class GoogleAuth extends Component {
             return ( 
                 <button
                     onClick={ this.onSignInClick }
-                    className='btn btn-light'>
+                    className='btn btn-light m-1'>
                         Continue with Google
                 </button>
             )
