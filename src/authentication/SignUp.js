@@ -1,22 +1,44 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { signUp } from '../actions'
 
 export class SignUp extends Component {
 
     state = {
-        email: '',
-        password: ''
+        user: {
+            name: '',
+            email: '',
+            password: ''
+        }
     }
 
     handleInputChange = e => {
         const { name, value } = e.target
         this.setState({
-            [name]: value
+            user: {
+                ...this.state.user,
+                [name]: value
+            }
         })
+    }
+
+    handleSubmit = e => {
+        e.preventDefault()
+
+        this.props.signUp(this.state)
     }
 
     render() {
         return (
             <form onSubmit={ this.handleSubmit }>
+                <input
+                    type='name'
+                    name='name'
+                    placeholder='Please enter your name'
+                    value={ this.state.name }
+                    onChange={ this.handleInputChange }
+                    autoComplete='off'
+                 />
                 <input
                     type='email'
                     name='email'
@@ -39,4 +61,4 @@ export class SignUp extends Component {
     }
 }
 
-export default SignUp
+export default connect(null, { signUp })(SignUp)
