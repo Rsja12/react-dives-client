@@ -12,6 +12,7 @@ import ShowLog from './components/divelogs/ShowLog'
 import EditLog from './components/divelogs/EditLog'
 import DeleteLog from './components/divelogs/DeleteLog'
 import SignUp from './authentication/SignUp'
+import SignIn from './authentication/SignIn'
 import history from './history'
 
 const App = () => {
@@ -23,6 +24,7 @@ const App = () => {
                     <Switch>
                         <PublicRoute exact path='/' component={ HomePage } />
                         <PublicRoute exact path='/signup' component={ SignUp } />
+                        <PublicRoute exact path='/signin' component={ SignIn } />
                         <PrivateRoute exact path='/logs' component={ LogsIndex } />
                         <PrivateRoute exact path='/logs/new' component={ CreateLog } />
                         <PrivateRoute exact path='/logs/:id' component={ ShowLog } />
