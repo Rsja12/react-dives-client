@@ -2,14 +2,18 @@ import axios from '../apis/logs'
 
 import history from '../history'
 
-export const signUp = formInfo => async dispatch => {
-    const response = await axios.post('/users', formInfo)
+export const signUp = user => async dispatch => {
+    const response = await axios.post('/users', user)
     console.log(response)
     dispatch({
         type: 'SIGN_UP',
         payload: response.data.user.id
     })
 
+}
+
+export const customSignIn = user => async dispatch => {
+    const response = axios.post('/login', user)
 }
 
 export const signIn = userId => {
