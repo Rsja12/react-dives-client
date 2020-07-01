@@ -4,8 +4,8 @@ import { Router, Route, Switch } from 'react-router-dom'
 import HomePage from './components/HomePage'
 import NavBar from './components/NavBar'
 import Error from './components/Error'
-import PrivateRoute from './routes/PrivateRoute'
-import PublicRoute from './routes/PublicRoute'
+// import PrivateRoute from './routes/PrivateRoute'
+// import PublicRoute from './routes/PublicRoute'
 import LogsIndex from './components/divelogs/LogsIndex'
 import CreateLog from './components/divelogs/CreateLog'
 import ShowLog from './components/divelogs/ShowLog'
@@ -22,14 +22,14 @@ const App = () => {
                 <div>
                     <NavBar />
                     <Switch>
-                        <PublicRoute exact path='/' component={ HomePage } />
-                        <PublicRoute exact path='/signup' component={ SignUp } />
-                        <PublicRoute exact path='/signin' component={ SignIn } />
-                        <PrivateRoute exact path='/logs' component={ LogsIndex } />
-                        <PrivateRoute exact path='/logs/new' component={ CreateLog } />
-                        <PrivateRoute exact path='/logs/:id' component={ ShowLog } />
-                        <PrivateRoute exact path='/logs/edit/:id' component={ EditLog } />
-                        <PrivateRoute exact path='/logs/delete/:id' component={ DeleteLog } />
+                        <Route exact path='/' component={ HomePage } />
+                        <Route exact path='/signup' component={ SignUp } />
+                        <Route exact path='/signin' component={ SignIn } />
+                        <Route exact path='/logs' component={ LogsIndex } />
+                        <Route exact path='/logs/new' component={ CreateLog } />
+                        <Route exact path='/logs/:id' component={ ShowLog } />
+                        <Route exact path='/logs/edit/:id' component={ EditLog } />
+                        <Route exact path='/logs/delete/:id' component={ DeleteLog } />
                         <Route component={ Error } />
                     </Switch>
                 </div>
