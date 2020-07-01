@@ -4,12 +4,12 @@ import history from '../history'
 
 export const signUp = formInfo => async dispatch => {
     const response = await axios.post('/users', formInfo)
-    // console.log(response)
+    console.log(response)
     dispatch({
         type: 'SIGN_UP',
         payload: response.data.user.id
     })
-    
+
 }
 
 export const signIn = userId => {
