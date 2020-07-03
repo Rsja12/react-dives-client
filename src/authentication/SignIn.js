@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+
+import { customSignIn } from '../actions'
 
 export class SignIn extends Component {
 
@@ -22,7 +25,7 @@ export class SignIn extends Component {
     handleSubmit = e => {
         e.preventDefault()
 
-        this.props.customSignIn(this.state.user)
+        this.props.customSignIn(this.state)
     }
 
     render() {
@@ -50,4 +53,4 @@ export class SignIn extends Component {
     }
 }
 
-export default SignIn
+export default connect(null, { customSignIn })(SignIn)

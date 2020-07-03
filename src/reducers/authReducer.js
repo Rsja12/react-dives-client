@@ -8,7 +8,8 @@ export default (state = INIT_STATE, action) => {
         case 'SIGN_UP':
             console.log(action.payload)
             return { ...state, isSignedIn: true, userId: action.payload }
-        case 'SIGN_IN':
+        case 'CUSTOM_SIGN_IN':
+            console.log(action.payload)
             return { ...state, isSignedIn: true, userId: action.payload }
         case 'SIGN_OUT':
             return { ...state, isSignedIn: false, userId: null }
