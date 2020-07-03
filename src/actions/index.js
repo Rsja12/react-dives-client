@@ -9,12 +9,12 @@ export const signUp = user => async dispatch => {
         type: 'SIGN_UP',
         payload: response.data.user.id
     })
-
+    history.push('/logs')
 }
 
-export const customSignIn = user => async dispatch => {
-    const response = axios.post('/login', user)
-}
+// export const customSignIn = user => async dispatch => {
+//     const response = axios.post('/login', user)
+// }
 
 export const signIn = userId => {
     return {

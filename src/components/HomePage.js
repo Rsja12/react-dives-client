@@ -24,7 +24,7 @@ const HomePage = () => {
                         </button>
                 </Link>
             </div>
-            <GoogleAuth />
+            {/* <GoogleAuth /> */}
             <h1>Start Logging Dives</h1>      
         </div>
     )

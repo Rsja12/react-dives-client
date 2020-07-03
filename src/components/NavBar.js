@@ -36,7 +36,7 @@ const NavBar = ({ isSignedIn }) => {
                         </Link>
                     </li>
                 </ul> */}
-                <GoogleAuth />
+                {/* <GoogleAuth /> */}
             </nav>
         )
     }
