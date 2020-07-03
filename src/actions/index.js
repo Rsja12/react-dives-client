@@ -2,22 +2,35 @@ import axios from '../apis/logs'
 
 import history from '../history'
 
-export const signUp = formInfo => async dispatch => {
-    const response = await axios.post('/users', formInfo)
-    // console.log(response)
+export const signUp = user => async dispatch => {
+
+    const response = await axios.post('/users', user)
+
     dispatch({
         type: 'SIGN_UP',
         payload: response.data.user.id
     })
-    
+    history.push('/logs')
 }
 
-export const signIn = userId => {
-    return {
-        type: 'SIGN_IN',
-        payload: userId
-    }
+export const customSignIn = user => async dispatch => {
+
+    const response = await axios.post('/login', user)
+    console.log(response)
+    dispatch({
+        type: 'CUSTOM_SIGN_IN'
+        // payload: response.data.user.id
+    })
+    localStorage.setItem('token', response.data.jwt)
+    history.push('/logs')
 }
+
+// export const signIn = userId => {
+//     return {
+//         type: 'SIGN_IN',
+//         payload: userId
+//     }
+// }
 
 export const signOut = () => {
     return {

@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 import '../styles/index.css'
-import GoogleAuth from '../authentication/GoogleAuth'
+// import GoogleAuth from '../authentication/GoogleAuth'
 
 const HomePage = () => {
     return (
@@ -24,7 +24,7 @@ const HomePage = () => {
                         </button>
                 </Link>
             </div>
-            <GoogleAuth />
+            {/* <GoogleAuth /> */}
             <h1>Start Logging Dives</h1>      
         </div>
     )

@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 
-import GoogleAuth from '../authentication/GoogleAuth'
+// import GoogleAuth from '../authentication/GoogleAuth'
 
 const NavBar = ({ isSignedIn }) => {
 
@@ -36,7 +36,7 @@ const NavBar = ({ isSignedIn }) => {
                         </Link>
                     </li>
                 </ul> */}
-                <GoogleAuth />
+                {/* <GoogleAuth /> */}
             </nav>
         )
     }
