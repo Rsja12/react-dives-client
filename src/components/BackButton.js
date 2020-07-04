@@ -5,7 +5,7 @@ const BackButton = ({ path, text }) => {
     return (
         <div className='top-row'>
             <Link to={ path }>
-                <button className='btn btn-outline-primary'>
+                <button className='btn btn-outline-dark'>
                     { text }
                 </button>
             </Link>

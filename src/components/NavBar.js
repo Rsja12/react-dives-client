@@ -70,7 +70,9 @@ export class NavBar extends Component {
         const { isSignedIn } = this.props
         if (isSignedIn) {
             return(
-                <button onClick={ () => this.props.signOut() }>
+                <button 
+                    className='btn btn-outline-light'
+                    onClick={ () => this.props.signOut() }>
                     Sign Out
                 </button>
             )
