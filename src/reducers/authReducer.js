@@ -6,7 +6,7 @@ const INIT_STATE = {
 export default (state = INIT_STATE, action) => {
     switch (action.type) {
         case 'SIGN_UP':
-            return { ...state, isSignedIn: true }
+            return { ...state, isSignedIn: action.payload }
         case 'CUSTOM_SIGN_IN':
             return { ...state, isSignedIn: true }
         case 'SIGN_OUT':

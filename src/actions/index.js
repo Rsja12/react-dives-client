@@ -8,8 +8,9 @@ export const signUp = user => async dispatch => {
 
     dispatch({
         type: 'SIGN_UP',
-        payload: response.data.user.id
+        payload: response.data.jwt
     })
+    localStorage.setItem('token', response.data.jwt)
     history.push('/logs')
 }
 
