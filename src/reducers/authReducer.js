@@ -1,6 +1,5 @@
 const INIT_STATE = {
-    isSignedIn: null,
-    userId: null
+    isSignedIn: null
 }
 
 export default (state = INIT_STATE, action) => {
@@ -8,9 +7,9 @@ export default (state = INIT_STATE, action) => {
         case 'SIGN_UP':
             return { ...state, isSignedIn: action.payload }
         case 'CUSTOM_SIGN_IN':
-            return { ...state, isSignedIn: true }
+            return { ...state, isSignedIn: action.payload }
         case 'SIGN_OUT':
-            return { ...state, isSignedIn: false, userId: null }
+            return { ...state, isSignedIn: ''}
         default:
             return state
     }
