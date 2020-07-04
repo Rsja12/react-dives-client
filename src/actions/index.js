@@ -19,8 +19,8 @@ export const customSignIn = user => async dispatch => {
     const response = await axios.post('/login', user)
     console.log(response)
     dispatch({
-        type: 'CUSTOM_SIGN_IN'
-        // payload: response.data.user.id
+        type: 'CUSTOM_SIGN_IN',
+        payload: response.data.jwt
     })
     localStorage.setItem('token', response.data.jwt)
     history.push('/logs')
@@ -34,8 +34,10 @@ export const customSignIn = user => async dispatch => {
 // }
 
 export const signOut = () => {
+    localStorage.removeItem('token')
     return {
-        type: 'SIGN_OUT'
+        type: 'SIGN_OUT',
+        payload: ''
     }
 }
 

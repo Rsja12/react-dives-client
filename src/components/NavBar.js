@@ -65,9 +65,11 @@ import { connect } from 'react-redux'
 import { signOut } from '../actions'
 
 export class NavBar extends Component {
+
     render() {
         const { isSignedIn } = this.props
         if (isSignedIn) {
+
             return (
                 <nav className='navbar navbar-dark bg-dark'>
                     <ul className='nav'>
@@ -88,8 +90,12 @@ export class NavBar extends Component {
                     </ul>
                 </nav>
             )
+            
         }
+
+        return null
     }
+
 }
 
 const mapStateToProps = state => ({

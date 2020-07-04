@@ -9,7 +9,7 @@ export default (state = INIT_STATE, action) => {
         case 'CUSTOM_SIGN_IN':
             return { ...state, isSignedIn: action.payload }
         case 'SIGN_OUT':
-            return { ...state, isSignedIn: ''}
+            return { ...state, isSignedIn: action.payload}
         default:
             return state
     }
