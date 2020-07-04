@@ -66,37 +66,40 @@ import { signOut } from '../actions'
 
 export class NavBar extends Component {
 
-    render() {
+    renderSignOut() {
         const { isSignedIn } = this.props
         if (isSignedIn) {
-
-            return (
-                <nav className='navbar navbar-dark bg-dark'>
-                    <ul className='nav'>
-                        <li className='nav-item'>
-                            <Link 
-                            className='navbar-brand text-white'
-                            to='/'>
-                                React Dives
-                            </Link>
-                        </li>
-                    </ul>
-                    <ul className='nav'>
-                        <li className='nav-item'>
-                            <button onClick={ () => this.props.signOut() }>
-                                Sign Out
-                            </button>
-                        </li>
-                    </ul>
-                </nav>
+            return(
+                <button onClick={ () => this.props.signOut() }>
+                    Sign Out
+                </button>
             )
-            
         }
+    }
 
-        return null
+    render() {
+        return (
+            <nav className='navbar navbar-dark bg-dark'>
+                <ul className='nav'>
+                    <li className='nav-item'>
+                        <Link 
+                        className='navbar-brand text-white'
+                        to='/'>
+                            React Dives
+                        </Link>
+                    </li>
+                </ul>
+                <ul className='nav'>
+                    <li className='nav-item'>
+                        { this.renderSignOut() }
+                    </li>
+                </ul>
+            </nav>
+        )
     }
 
 }
+
 
 const mapStateToProps = state => ({
     isSignedIn: state.auth.isSignedIn
