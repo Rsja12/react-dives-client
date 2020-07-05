@@ -30,25 +30,49 @@ export class SignIn extends Component {
 
     render() {
         return (
-            <form onSubmit={ this.handleSubmit }>
-                <input
-                    type='email'
-                    name='email'
-                    placeholder='Please enter your email'
-                    value={ this.state.email }
-                    onChange={ this.handleInputChange }
-                    autoComplete='off'
-                 />
-                <input
-                    type='password'
-                    name='password'
-                    placeholder='Please enter your password'
-                    value={ this.state.password }
-                    onChange={ this.handleInputChange }
-                    autoComplete='off'
-                 />
-                 <input type='submit' value='Sign In' />
-            </form>
+            <div className='auth-form'>
+                <form 
+                    className='center-container auth-form' 
+                    onSubmit={ this.handleSubmit }>
+                    <div className='row justify-content-center'>
+                        <div className='col-md-10'>
+                            <input
+                                className='form-control auth-field'
+                                type='email'
+                                name='email'
+                                placeholder='Please enter your email'
+                                value={ this.state.email }
+                                onChange={ this.handleInputChange }
+                                autoComplete='off'
+                            />
+                        </div>
+                    </div> 
+                    <div className='row justify-content-center'>
+                        <div className='col-md-10'>
+                            <input
+                                className='form-control auth-field'
+                                type='password'
+                                name='password'
+                                placeholder='Please enter your password'
+                                value={ this.state.password }
+                                onChange={ this.handleInputChange }
+                                autoComplete='off'
+                            />
+                        </div>
+                    </div>                
+                    <div className='row justify-content-center'>
+                        <div className='col-md-8'>
+                            <button 
+                                style={{ marginTop: '7%' }}
+                                className='btn btn-light btn-block'
+                                type='submit' 
+                            >
+                                Sign In!
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
         )
     }
 }

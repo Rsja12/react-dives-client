@@ -30,12 +30,14 @@ export class SignUp extends Component {
 
     render() {
         return (
-            <div className='homePage'>
-                <form className='center-container container-fluid' onSubmit={ this.handleSubmit }>
+            <div className='auth-form'>
+                <form 
+                    className='center-container auth-form' 
+                    onSubmit={ this.handleSubmit }>
                     <div className='row justify-content-center'>
-                        <div className='col-md-8'>
+                        <div className='col-md-10'>
                             <input
-                                className='form-control'
+                                className='form-control auth-field'
                                 type='name'
                                 name='name'
                                 placeholder='Please enter your name'
@@ -46,9 +48,9 @@ export class SignUp extends Component {
                         </div>
                     </div>
                     <div className='row justify-content-center'>
-                        <div className='col-md-8'>
+                        <div className='col-md-10'>
                             <input
-                                className='form-control'
+                                className='form-control auth-field'
                                 type='email'
                                 name='email'
                                 placeholder='Please enter your email'
@@ -59,9 +61,9 @@ export class SignUp extends Component {
                         </div>
                     </div> 
                     <div className='row justify-content-center'>
-                        <div className='col-md-8'>
+                        <div className='col-md-10'>
                             <input
-                                className='form-control'
+                                className='form-control auth-field'
                                 type='password'
                                 name='password'
                                 placeholder='Please enter your password'
@@ -75,7 +77,7 @@ export class SignUp extends Component {
                         <div className='col-md-8'>
                             <button 
                                 style={{ marginTop: '7%' }}
-                                className='btn btn-success btn-block'
+                                className='btn btn-light btn-block'
                                 type='submit' 
                                 value='Sign Up' >
                                 Sign Up!
