@@ -17,7 +17,7 @@ export const signUp = user => async dispatch => {
 export const customSignIn = user => async dispatch => {
 
     const response = await axios.post('/login', user)
-    console.log(response)
+
     dispatch({
         type: 'CUSTOM_SIGN_IN',
         payload: response.data.jwt
@@ -44,7 +44,9 @@ export const signOut = () => {
 export const fetchLogs = () => {
 
     return async dispatch => {
-        const response = await axios.get('/logs')
+        const response = await axios.get('/divelogs')
+
+        console.log(response)
 
         dispatch({
             type: 'FETCH_LOGS',
@@ -55,7 +57,7 @@ export const fetchLogs = () => {
 
 export const fetchLog = id => {
     return async dispatch => {
-        const response = await axios.get(`/logs/${id}`)
+        const response = await axios.get(`/divelogs/${id}`)
 
         dispatch({
             type: 'FETCH_LOG',
@@ -71,7 +73,7 @@ export const createLog = formValues => {
         // getState function grabs the state obj from redux store
         const { userId } = getState().auth
         
-        const response = await axios.post('/logs', {...formValues, date, userId})
+        const response = await axios.post('/divelogs', {...formValues, date, userId})
         dispatch({
             type: 'CREATE_LOG',
             payload: response.data
@@ -84,7 +86,7 @@ export const createLog = formValues => {
 export const editLog = (id, formValues) => {
 
     return async dispatch => {
-        const response = await axios.patch(`/logs/${id}`, formValues)
+        const response = await axios.patch(`/divelogs/${id}`, formValues)
 
         dispatch({
             type: 'EDIT_LOG',
@@ -98,7 +100,7 @@ export const editLog = (id, formValues) => {
 export const deleteLog = id => {
 
     return async dispatch => {
-        await axios.delete(`/logs/${id}`)
+        await axios.delete(`/divelogs/${id}`)
 
         dispatch({
             type: 'DELETE_LOG',
