@@ -8,7 +8,7 @@ export const signUp = user => async dispatch => {
 
     dispatch({
         type: 'SIGN_UP',
-        payload: response.data.jwt
+        payload: response.data
     })
     localStorage.setItem('token', response.data.jwt)
     history.push('/logs')
@@ -20,7 +20,7 @@ export const customSignIn = user => async dispatch => {
 
     dispatch({
         type: 'CUSTOM_SIGN_IN',
-        payload: response.data.jwt
+        payload: response.data
     })
     localStorage.setItem('token', response.data.jwt)
     history.push('/logs')
