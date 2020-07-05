@@ -44,7 +44,11 @@ export const signOut = () => {
 export const fetchLogs = () => {
 
     return async dispatch => {
-        const response = await axios.get('/divelogs')
+        const response = await axios.get('/divelogs', {
+            headers: {
+                'Authorization': `Bearer ${localStorage.getItem('token')}`
+            }
+        })
 
         console.log(response)
 
