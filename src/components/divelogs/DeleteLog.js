@@ -27,7 +27,7 @@ export class DeleteLog extends Component {
     handleSubmit = e => {
         e.preventDefault()
         this.props.deleteLog( this.props.match.params.id )
-        history.push('/logs')
+        history.push('/dashboard')
     }
 
     render() {

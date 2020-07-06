@@ -23,7 +23,7 @@ export const customSignIn = user => async dispatch => {
         payload: response.data
     })
     localStorage.setItem('token', response.data.jwt)
-    history.push('/logs')
+    history.push('/dashboard')
 }
 
 // export const signIn = userId => {
