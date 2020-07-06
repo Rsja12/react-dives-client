@@ -1,6 +1,5 @@
 const INIT_STATE = {
-    isSignedIn: null,
-    name: null
+    isSignedIn: null
 }
 
 export default (state = INIT_STATE, action) => {

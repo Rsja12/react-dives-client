@@ -3,19 +3,24 @@ import React, { Component } from 'react'
 export class Form extends Component {
 
     state = {
-        location: this.props.location || '',
-        divesite: this.props.divesite || '',
-        maxDepth: this.props.maxDepth || '',
-        bottomTime: this.props.bottomTime || '',
-        visibility: this.props.visibility || '',
-        waterTemp: this.props.waterTemp || '',
-        weight: this.props.weight || '',
-        notes: this.props.notes || ''
+        divelog: {
+            location: this.props.location || '',
+            divesite: this.props.divesite || '',
+            max_depth: this.props.maxDepth || '',
+            bottom_time: this.props.bottomTime || '',
+            visibility: this.props.visibility || '',
+            water_temp: this.props.waterTemp || '',
+            weight: this.props.weight || '',
+            notes: this.props.notes || ''
+        }
     }
 
     handleInput = e => {
         this.setState({
-            [e.target.name]: e.target.value
+            divelog: {
+                [e.target.name]: e.target.value
+            }
+                
         })
     }
 

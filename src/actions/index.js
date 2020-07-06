@@ -73,11 +73,15 @@ export const fetchLog = id => {
 export const createLog = formValues => {
 
     return async (dispatch, getState) => {
-        const date = new Date().toLocaleDateString()
+        // const date = new Date().toLocaleDateString()
         // getState function grabs the state obj from redux store
-        const { userId } = getState().auth
+        // const { userId } = getState().auth
         
-        const response = await axios.post('/divelogs', {...formValues, date, userId})
+        const response = await axios.post('/divelogs', {...formValues}, {
+            headers: {
+                'Authorization': localStorage.getItem('token')
+            }
+        })
         dispatch({
             type: 'CREATE_LOG',
             payload: response.data

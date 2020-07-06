@@ -39,11 +39,11 @@ export class LogsIndex extends Component {
     //     })
     // }
 
-    renderLogs() {
+    renderLogs() {        
         return this.props.logs.map( log => {
             return(
-                <div className='center-container'>
-                    <LogItem log={ log } key={ log.id } />
+                <div className='center-container' key={ log.id }>
+                    <LogItem log={ log } />
                 </div>
             )
         } )
@@ -70,7 +70,7 @@ export class LogsIndex extends Component {
 
         const { logsPerPage } = this.state
         const { logs } = this.props
-
+        
         return (
             <Fragment>
                 <AddDiveBtn />
