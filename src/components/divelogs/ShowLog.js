@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import BackButton from '../BackButton'
 
 const ShowLog = ({ log }) => {
+    console.log(log)
     return (
         <Fragment>
             <BackButton path={'/logs'} text={'Back to all dives'} />
@@ -12,7 +13,7 @@ const ShowLog = ({ log }) => {
                 <div className='row'>
                     <div className='col text-left'>
                         <ul className="list-group list-group-flush">
-                            <li className="list-group-item">
+                            {/* <li className="list-group-item">
                                 <div className='row'>
                                     <div className='col text-left text-uppercase font-weight-bold'>
                                         date:
@@ -21,7 +22,7 @@ const ShowLog = ({ log }) => {
                                         { log.date }
                                     </div>
                                 </div>
-                            </li>
+                            </li> */}
                             <li className="list-group-item">
                                 <div className='row'>
                                     <div className='col text-left text-uppercase font-weight-bold'>
@@ -48,7 +49,7 @@ const ShowLog = ({ log }) => {
                                         max depth:
                                     </div>
                                     <div className='col text-right'>
-                                        { log.maxDepth } ft
+                                        { log.max_depth } ft
                                     </div>
                                 </div>
                             </li>
@@ -58,7 +59,7 @@ const ShowLog = ({ log }) => {
                                         bottom time:
                                     </div>
                                     <div className='col text-right'>
-                                        { log.bottomTime } min
+                                        { log.bottom_time } min
                                     </div>
                                 </div>
                             </li>
@@ -78,7 +79,7 @@ const ShowLog = ({ log }) => {
                                         water temp:
                                     </div>
                                     <div className='col text-right'>
-                                        { log.waterTemp } F
+                                        { log.water_temp } F
                                     </div>
                                 </div>
                             </li>

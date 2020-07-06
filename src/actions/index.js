@@ -15,7 +15,7 @@ export const signUp = user => async dispatch => {
 }
 
 export const customSignIn = user => async dispatch => {
-
+    
     const response = await axios.post('/login', user)
 
     dispatch({
@@ -79,7 +79,7 @@ export const createLog = formValues => {
         
         const response = await axios.post('/divelogs', {...formValues}, {
             headers: {
-                'Authorization': localStorage.getItem('token')
+                'Authorization': `Bearer ${localStorage.getItem('token')}`
             }
         })
         dispatch({
