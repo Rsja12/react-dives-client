@@ -13,9 +13,11 @@ export class DeleteLog extends Component {
     }
 
     componentDidMount() {
-        this.props.fetchLog( this.props.match.params.id )
+        const token = localStorage.getItem('token')
+        const id = this.props.match.params.id
+        this.props.fetchLog(token, id)
     }
-
+    
     hideModal = () => {
         this.setState({
             isOpen: false
@@ -23,11 +25,14 @@ export class DeleteLog extends Component {
         const id = this.props.match.params.id
         history.push(`/logs/${id}`)
     }
-
+    
     handleSubmit = e => {
         e.preventDefault()
-        this.props.deleteLog( this.props.match.params.id )
-        history.push('/dashboard')
+        
+        const token = localStorage.getItem('token')
+        const id = this.props.match.params.id
+        this.props.deleteLog(token, id)
+        history.push('/logs')
     }
 
     render() {

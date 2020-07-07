@@ -102,10 +102,14 @@ export const editLog = (id, formValues, token) => {
 
 }
 
-export const deleteLog = id => {
+export const deleteLog = (token, id) => {
 
     return async dispatch => {
-        await axios.delete(`/divelogs/${id}`)
+        await axios.delete(`/divelogs/${id}`, {
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        })
 
         dispatch({
             type: 'DELETE_LOG',
