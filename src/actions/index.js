@@ -68,7 +68,6 @@ export const fetchLog = (token, id) => {
 export const createLog = (formValues, token) => {
     return async dispatch => {
         // const date = new Date().toLocaleDateString()
-        // getState function grabs the state obj from redux store
         
         const response = await axios.post('/divelogs', formValues, {
             headers: {

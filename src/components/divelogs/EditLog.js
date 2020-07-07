@@ -12,10 +12,11 @@ export class EditLog extends Component {
         const id = this.props.match.params.id
         this.props.fetchLog(token, id)
     }
-
+    
     submit = formValues => {
+        const token = localStorage.getItem('token')
         const id = this.props.match.params.id
-        this.props.editLog( id, formValues )
+        this.props.editLog(id, formValues, token)
     }
 
     render() {
