@@ -27,10 +27,8 @@ export const customSignIn = user => async dispatch => {
 }
 
 export const signOut = () => {
-    localStorage.removeItem('token')
     return {
-        type: 'SIGN_OUT',
-        payload: null
+        type: 'SIGN_OUT'
     }
 }
 
@@ -57,7 +55,7 @@ export const fetchLog = (token, id) => {
                 'Authorization': `Bearer ${token}`
             }
         })
-        console.log(response)
+        
         dispatch({
             type: 'FETCH_LOG',
             payload: response.data

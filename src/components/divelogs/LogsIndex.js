@@ -13,52 +13,9 @@ export class LogsIndex extends Component {
         logsPerPage: 6,
     }
 
-    // componentDidUpdate(prevProps) {
-    //     console.log(prevProps)
-    //     if (prevProps.token !== this.props.token){
-    //         this.props.fetchLogs(this.props.token)
-    //     }
-    // }
-
     componentDidMount() {
         this.props.fetchLogs(this.props.token)
     }
-    
-      
-
-
-    // TODO: figure out how to call action creator ONLY AFTER WE HAVE A
-    // componentDidUpdate(prevState){
-    //     if (this.state.token !== prevState.token) {
-    //         this.setState({
-    //             token: this.state.token
-    //         })
-    //     }
-    //     console.log(this.state.token)
-    // }
-
-
-    // renderLogs() {
-    //     // Grab 6 logs 
-    //     const { currentPage, logsPerPage } = this.state
-    //     const lastLogIdx = currentPage * logsPerPage
-    //     const firstLogIdx = lastLogIdx - logsPerPage
-        
-    //     // sort logs to get current logs
-    //     const sortedLogs = this.props.logs.sort( (a, b) => a.date < b.date ? 1 : -1 )
-    //     const currentLogs = sortedLogs.slice( firstLogIdx, lastLogIdx )
-
-    //     return currentLogs.map( log => {
-    //         if (this.props.currentUserId === log.userId) {
-    //             return(
-    //                 <div className='center-container'>
-    //                     <LogItem log={ log } key={ log.id } />
-    //                 </div>
-    //             )
-    //         }
-    //         return null
-    //     })
-    // }
 
     renderLogs() {        
         return this.props.logs.map( log => {
