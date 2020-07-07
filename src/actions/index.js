@@ -26,13 +26,6 @@ export const customSignIn = user => async dispatch => {
     history.push('/dashboard')
 }
 
-// export const signIn = userId => {
-//     return {
-//         type: 'SIGN_IN',
-//         payload: userId
-//     }
-// }
-
 export const signOut = () => {
     localStorage.removeItem('token')
     return {
@@ -43,24 +36,12 @@ export const signOut = () => {
 
 export const fetchLogs = (token) => {
 
-    // return (dispatch) => {
-    //     fetch('http://localhost:3000/api/v1/divelogs', {
-    //         method: 'GET',
-    //         headers: {
-    //             'Authorization': `Bearer ${token}`
-    //         }
-    //     })
-    //     .then(res => res.json())
-    //     .then(res => console.log(res))
-    // }
-
     return async dispatch => {
         const response = await axios.get('/divelogs', {
             headers: {
                 'Authorization': `Bearer ${token}`
             }
         })
-
         
         dispatch({
             type: 'FETCH_LOGS',
@@ -134,3 +115,32 @@ export const deleteLog = id => {
     }
     
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// export const signIn = userId => {
+//     return {
+//         type: 'SIGN_IN',
+//         payload: userId
+//     }
+// }
