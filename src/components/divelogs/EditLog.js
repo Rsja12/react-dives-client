@@ -8,11 +8,14 @@ import BackButton from '../BackButton'
 export class EditLog extends Component {
 
     componentDidMount() {
-        this.props.fetchLog( this.props.match.params.id )
+        const token = localStorage.getItem('token')
+        const id = this.props.match.params.id
+        this.props.fetchLog(token, id)
     }
 
     submit = formValues => {
-        this.props.editLog( this.props.match.params.id, formValues )
+        const id = this.props.match.params.id
+        this.props.editLog( id, formValues )
     }
 
     render() {

@@ -61,8 +61,7 @@ export const fetchLogs = (token) => {
             }
         })
 
-        console.log(response.data)
-
+        
         dispatch({
             type: 'FETCH_LOGS',
             payload: response.data
