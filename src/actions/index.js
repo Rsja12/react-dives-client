@@ -30,7 +30,7 @@ export const signOut = () => {
     localStorage.removeItem('token')
     return {
         type: 'SIGN_OUT',
-        payload: ''
+        payload: null
     }
 }
 
@@ -57,7 +57,7 @@ export const fetchLog = (token, id) => {
                 'Authorization': `Bearer ${token}`
             }
         })
-        
+        console.log(response)
         dispatch({
             type: 'FETCH_LOG',
             payload: response.data

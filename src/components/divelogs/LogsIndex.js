@@ -11,17 +11,20 @@ export class LogsIndex extends Component {
     state = {
         currentPage: 1,
         logsPerPage: 6,
-        token: localStorage.getItem('token')
     }
+
+    // componentDidUpdate(prevProps) {
+    //     console.log(prevProps)
+    //     if (prevProps.token !== this.props.token){
+    //         this.props.fetchLogs(this.props.token)
+    //     }
+    // }
 
     componentDidMount() {
-        this.props.fetchLogs(this.state.token)
+        this.props.fetchLogs(this.props.token)
     }
-
-    // componentDidUpdate(prevState) {
-        
-        
-    // }
+    
+      
 
 
     // TODO: figure out how to call action creator ONLY AFTER WE HAVE A
@@ -85,10 +88,11 @@ export class LogsIndex extends Component {
     }
     
     render() {
-
         const { logsPerPage } = this.state
         const { logs } = this.props
-        
+        if (!this.props.token) return <div>Loading...</div>
+
+        // console.log(this.props.token)
         return (
             <Fragment>
                 <AddDiveBtn />

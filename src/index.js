@@ -6,12 +6,12 @@ import reduxThunk from 'redux-thunk'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 import App from './App'
-import reducers from './reducers'
+import { rootReducer } from './reducers'
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
-const store = createStore( reducers,
+const store = createStore( rootReducer,
     {
-        auth: {isSignedIn: localStorage.getItem('token')} 
+        auth: {isSignedIn: localStorage.getItem('token')}
     },
      composeEnhancers(applyMiddleware(reduxThunk)) )
 

@@ -26,7 +26,7 @@ const App = () => {
                         <PublicRoute exact path='/' component={ HomePage } />
                         <PublicRoute exact path='/signup' component={ SignUp } />
                         <PublicRoute exact path='/signin' component={ SignIn } />
-                        <PrivateRoute exact path='/dashboard' component={ Welcome } />
+                        <PrivateRoute exact path='/dashboard' component={ LogsIndex } />
                         <PrivateRoute exact path='/logs' component={ LogsIndex } />
                         <PrivateRoute exact path='/logs/new' component={ CreateLog } />
                         <PrivateRoute exact path='/logs/:id' component={ ShowLog } />

@@ -20,8 +20,8 @@ export class EditLog extends Component {
     }
 
     render() {
-        
-        const { location, divesite, maxDepth, bottomTime, visibility, waterTemp, weight, notes, id } = this.props.log
+        console.log(this.props.log)
+        const { location, divesite, max_depth, bottom_time, visibility, water_temp, weight, notes, id } = this.props.log
         return (
             <div>
                 <BackButton path={`/logs/${id}`} text={ 'Nevermind' } />
@@ -29,10 +29,10 @@ export class EditLog extends Component {
                 <Form
                     location={ location }
                     divesite={ divesite }
-                    maxDepth={ maxDepth }
-                    bottomTime={ bottomTime }
+                    max_depth={ max_depth }
+                    bottom_time={ bottom_time }
                     visibility={ visibility }
-                    waterTemp={ waterTemp }
+                    water_temp={ water_temp }
                     weight={ weight }
                     notes={ notes }
                     submit={ this.submit }

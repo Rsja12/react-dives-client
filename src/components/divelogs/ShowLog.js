@@ -9,17 +9,16 @@ export class ShowLog extends Component {
 
     componentDidMount() {
         const token = localStorage.getItem('token')
-        const id = this.props.match.params.id
+        const id = this.props.log.id
         this.props.fetchLog(token, id)
     }
 
     render() {
+        // if (!this.state.log) return <div>Loading</div>
+
         const { log } = this.props
-        console.log(this.props)
+        // console.log(this.props.log)
         return (
-            // <div>
-            //     Show
-            // </div>
             <div>
                 <BackButton path={'/dashboard'} text={'Back to all dives'} />
                 <div className='center-container'>
