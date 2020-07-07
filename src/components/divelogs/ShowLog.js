@@ -8,12 +8,12 @@ import { fetchLog } from '../../actions'
 export class ShowLog extends Component {
 
     componentDidMount() {
-        this.props.fetchLog(this.props.log.id)
+        const token = localStorage.getItem('token')
+        const id = this.props.match.params.id
+        this.props.fetchLog(token, id)
     }
 
     render() {
-        const { log } = this.props
-        console.log(log)
         return (
             <div>
                 <BackButton path={'/dashboard'} text={'Back to all dives'} />
@@ -21,16 +21,6 @@ export class ShowLog extends Component {
                     <div className='row'>
                         <div className='col text-left'>
                             <ul className="list-group list-group-flush">
-                                {/* <li className="list-group-item">
-                                    <div className='row'>
-                                        <div className='col text-left text-uppercase font-weight-bold'>
-                                            date:
-                                        </div>
-                                        <div className='col text-right'>
-                                            { log.date }
-                                        </div>
-                                    </div>
-                                </li> */}
                                 <li className="list-group-item">
                                     <div className='row'>
                                         <div className='col text-left text-uppercase font-weight-bold'>

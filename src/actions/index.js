@@ -70,10 +70,14 @@ export const fetchLogs = (token) => {
     }
 }
 
-export const fetchLog = id => {
+export const fetchLog = (token, id) => {
     return async dispatch => {
-        const response = await axios.get(`/divelogs/${id}`)
-
+        const response = await axios.get(`/divelogs/${id}`, {
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        })
+        
         dispatch({
             type: 'FETCH_LOG',
             payload: response.data
