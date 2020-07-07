@@ -8,7 +8,8 @@ import BackButton from '../BackButton'
 export class CreateLog extends Component {
 
     submit = formValues => {
-        this.props.createLog( formValues )
+        const token = localStorage.getItem('token')
+        this.props.createLog(formValues, token )
     }
 
     render() {
