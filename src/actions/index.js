@@ -105,10 +105,14 @@ export const createLog = formValues => {
 
 }
 
-export const editLog = (id, formValues) => {
+export const editLog = (id, formValues, token) => {
 
     return async dispatch => {
-        const response = await axios.patch(`/divelogs/${id}`, formValues)
+        const response = await axios.patch(`/divelogs/${id}`, formValues, {
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        })
 
         dispatch({
             type: 'EDIT_LOG',
