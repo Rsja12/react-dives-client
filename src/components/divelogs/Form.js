@@ -6,10 +6,10 @@ export class Form extends Component {
         divelog: {
             location: this.props.location || '',
             divesite: this.props.divesite || '',
-            max_depth: this.props.maxDepth || '',
-            bottom_time: this.props.bottomTime || '',
+            max_depth: this.props.max_depth || '',
+            bottom_time: this.props.bottom_time || '',
             visibility: this.props.visibility || '',
-            water_temp: this.props.waterTemp || '',
+            water_temp: this.props.water_temp || '',
             weight: this.props.weight || '',
             notes: this.props.notes || ''
         }
@@ -18,6 +18,7 @@ export class Form extends Component {
     handleInput = e => {
         this.setState({
             divelog: {
+                ...this.state.divelog,
                 [e.target.name]: e.target.value
             }
                 
@@ -31,7 +32,7 @@ export class Form extends Component {
 
     render() {
 
-        const { location, divesite, maxDepth, bottomTime, visibility, waterTemp, weight, notes } = this.state
+        const { location, divesite, max_depth, bottom_time, visibility, water_temp, weight, notes } = this.state
 
         return (
             <form className='center-container container-fluid' onSubmit={ this.handleSubmit }>
@@ -64,27 +65,27 @@ export class Form extends Component {
 
                 <div className='row'>
                     <div className='col-md-6'>
-                        <label htmlFor='maxDepth'>Max Depth (Ft)</label>
+                        <label htmlFor='max_depth'>Max Depth (Ft)</label>
                         <input 
                             autoComplete='off'
                             className='form-control'
                             type='number'
-                            id='maxDepth'
-                            name='maxDepth'
+                            id='max_depth'
+                            name='max_depth'
                             onChange={ this.handleInput }
-                            value={ maxDepth }
+                            value={ max_depth }
                         />
                     </div>
                     <div className='col-md-6'>
-                        <label htmlFor='bottomtime'>Bottom Time (Min)</label>
+                        <label htmlFor='bottom_time'>Bottom Time (Min)</label>
                         <input 
                             autoComplete='off'
                             className='form-control'
                             type='number'
-                            id='bottomTime'
-                            name='bottomTime'
+                            id='bottom_time'
+                            name='bottom_time'
                             onChange={ this.handleInput }
-                            value={ bottomTime }
+                            value={ bottom_time }
                         />
                     </div>
                 </div>
@@ -103,15 +104,15 @@ export class Form extends Component {
                         />
                     </div>
                     <div className='col-md-4'>
-                        <label htmlFor='waterTemp'>Water Temp (F)</label>
+                        <label htmlFor='water_temp'>Water Temp (F)</label>
                         <input  
                             autoComplete='off'
                             className='form-control'
                             type='number'
-                            id='waterTemp'
-                            name='waterTemp'
+                            id='water_temp'
+                            name='water_temp'
                             onChange={ this.handleInput }
-                            value={ waterTemp }
+                            value={ water_temp }
                         />
                     </div>
                     <div className='col-md-4'>

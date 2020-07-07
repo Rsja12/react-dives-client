@@ -43,6 +43,17 @@ export const signOut = () => {
 
 export const fetchLogs = (token) => {
 
+    // return (dispatch) => {
+    //     fetch('http://localhost:3000/api/v1/divelogs', {
+    //         method: 'GET',
+    //         headers: {
+    //             'Authorization': `Bearer ${token}`
+    //         }
+    //     })
+    //     .then(res => res.json())
+    //     .then(res => console.log(res))
+    // }
+
     return async dispatch => {
         const response = await axios.get('/divelogs', {
             headers: {
@@ -50,7 +61,7 @@ export const fetchLogs = (token) => {
             }
         })
 
-        console.log(response)
+        console.log(response.data)
 
         dispatch({
             type: 'FETCH_LOGS',
@@ -71,13 +82,13 @@ export const fetchLog = id => {
 }
 
 export const createLog = formValues => {
-
+    console.log(formValues)
     return async (dispatch, getState) => {
         // const date = new Date().toLocaleDateString()
         // getState function grabs the state obj from redux store
         // const { userId } = getState().auth
         
-        const response = await axios.post('/divelogs', {...formValues}, {
+        const response = await axios.post('/divelogs', formValues, {
             headers: {
                 'Authorization': `Bearer ${localStorage.getItem('token')}`
             }

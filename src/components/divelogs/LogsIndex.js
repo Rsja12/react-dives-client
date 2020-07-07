@@ -10,13 +10,30 @@ export class LogsIndex extends Component {
 
     state = {
         currentPage: 1,
-        logsPerPage: 6
+        logsPerPage: 6,
+        token: localStorage.getItem('token')
     }
 
-    componentDidMount(){
-        const token = localStorage.getItem('token')
-        this.props.fetchLogs(token)
+    componentDidMount() {
+        this.props.fetchLogs(this.state.token)
     }
+
+    // componentDidUpdate(prevState) {
+        
+        
+    // }
+
+
+    // TODO: figure out how to call action creator ONLY AFTER WE HAVE A
+    // componentDidUpdate(prevState){
+    //     if (this.state.token !== prevState.token) {
+    //         this.setState({
+    //             token: this.state.token
+    //         })
+    //     }
+    //     console.log(this.state.token)
+    // }
+
 
     // renderLogs() {
     //     // Grab 6 logs 
@@ -89,7 +106,7 @@ export class LogsIndex extends Component {
 
 const mapStateToProps = state => ({
     logs: Object.values( state.logs ),
-    currentUserId: state.auth.userId
+    token: state.auth.isSignedIn
 })
 
 export default connect(mapStateToProps, { fetchLogs })(LogsIndex)
