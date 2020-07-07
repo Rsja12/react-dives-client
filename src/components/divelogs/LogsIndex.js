@@ -14,7 +14,8 @@ export class LogsIndex extends Component {
     }
 
     componentDidMount(){
-        this.props.fetchLogs()
+        const token = localStorage.getItem('token')
+        this.props.fetchLogs(token)
     }
 
     // renderLogs() {

@@ -41,12 +41,12 @@ export const signOut = () => {
     }
 }
 
-export const fetchLogs = () => {
+export const fetchLogs = (token) => {
 
     return async dispatch => {
         const response = await axios.get('/divelogs', {
             headers: {
-                'Authorization': `Bearer ${localStorage.getItem('token')}`
+                'Authorization': `Bearer ${token}`
             }
         })
 

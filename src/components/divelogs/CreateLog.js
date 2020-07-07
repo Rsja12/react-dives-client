@@ -14,7 +14,7 @@ export class CreateLog extends Component {
     render() {
         return (
             <div>
-                <BackButton path={`/logs`} text={ 'Nevermind' } />
+                <BackButton path={`/dashboard`} text={ 'Nevermind' } />
                 <h2 className='text-center edit-page'>Add Another Dive!</h2>
                 <Form submit={ this.submit } />
             </div>
