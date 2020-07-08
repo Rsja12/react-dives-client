@@ -36,6 +36,10 @@ export class DeleteLog extends Component {
     }
 
     render() {
+        if (!this.props.log) {
+            return <div>Loading...</div>
+        }
+        
         return (
             <Modal 
             centered

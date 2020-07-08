@@ -49,7 +49,6 @@ export class LogsIndex extends Component {
         const { logs } = this.props
         if (!this.props.token) return <div>Loading...</div>
 
-        // console.log(this.props.token)
         return (
             <Fragment>
                 <AddDiveBtn />
