@@ -50,35 +50,3 @@ const mapStateToProps = (state, ownProps) => ({
 
 export default connect(mapStateToProps, { fetchLog, editLog })(EditLog)
 
-
-// import React, { Component } from 'react'
-// import { connect } from 'react-redux'
-
-// import { fetchLog } from '../../actions'
-
-// export class EditLog extends Component {
-
-//     componentDidMount() {
-//         const token = localStorage.getItem('token')
-//         const id = this.props.match.params.id
-//         this.props.fetchLog(token, id)
-//     }
-
-//     render() {
-//         if (!this.props.log) {
-//             return <div>Loading...</div>
-//         }
-
-//         return (
-//             <div>
-//                 {this.props.log.location}
-//             </div>
-//         )
-//     }
-// }
-
-// const mapStateToProps = (state, ownProps) => ({
-//     log: state.logs[ownProps.match.params.id]
-// })
-
-// export default connect(mapStateToProps, { fetchLog })(EditLog)

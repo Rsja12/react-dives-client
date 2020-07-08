@@ -32,7 +32,7 @@ export class Form extends Component {
 
     render() {
 
-        const { location, divesite, max_depth, bottom_time, visibility, water_temp, weight, notes } = this.state
+        const { location, divesite, max_depth, bottom_time, visibility, water_temp, weight, notes } = this.state.divelog
 
         return (
             <form className='center-container container-fluid' onSubmit={ this.handleSubmit }>
