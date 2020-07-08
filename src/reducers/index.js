@@ -10,6 +10,7 @@ const appReducer = combineReducers({
 
 export const rootReducer = (state, action) => {
     if (action.type === 'SIGN_OUT') {
+        localStorage.clear()
         state = undefined
     }
 

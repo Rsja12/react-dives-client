@@ -77,7 +77,7 @@ export const createLog = (formValues, token) => {
             type: 'CREATE_LOG',
             payload: response.data
         })
-        history.push('/logs')
+        history.push('/dashboard')
     }
 
 }
