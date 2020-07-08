@@ -44,6 +44,7 @@ export class SignUp extends Component {
                                 value={ this.state.name }
                                 onChange={ this.handleInputChange }
                                 autoComplete='off'
+                                required
                             />
                         </div>
                     </div>
@@ -57,6 +58,7 @@ export class SignUp extends Component {
                                 value={ this.state.email }
                                 onChange={ this.handleInputChange }
                                 autoComplete='off'
+                                required
                             />
                         </div>
                     </div> 
@@ -70,6 +72,7 @@ export class SignUp extends Component {
                                 value={ this.state.password }
                                 onChange={ this.handleInputChange }
                                 autoComplete='off'
+                                required
                             />
                         </div>
                     </div>                

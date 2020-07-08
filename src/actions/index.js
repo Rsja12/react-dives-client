@@ -11,7 +11,7 @@ export const signUp = user => async dispatch => {
         payload: response.data
     })
     localStorage.setItem('token', response.data.jwt)
-    history.push('/logs')
+    history.push('/dashboard')
 }
 
 export const customSignIn = user => async dispatch => {
@@ -113,8 +113,9 @@ export const deleteLog = (token, id) => {
             type: 'DELETE_LOG',
             payload: id
         })
+        history.push('/dashboard')
     }
-    
+
 }
 
 

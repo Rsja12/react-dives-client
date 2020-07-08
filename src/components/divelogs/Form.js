@@ -47,6 +47,7 @@ export class Form extends Component {
                             name='location'
                             onChange={ this.handleInput }
                             value={ location }
+                            required
                         />
                     </div>
                     <div className='col-md-6'>
@@ -59,6 +60,7 @@ export class Form extends Component {
                             name='divesite'
                             onChange={ this.handleInput }
                             value={ divesite }
+                            required
                         />
                     </div>
                 </div>
