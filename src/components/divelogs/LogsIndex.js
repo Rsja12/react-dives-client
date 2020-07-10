@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 import { fetchLogs } from '../../actions'
 import LogItem from './LogItem'
-import AddDiveBtn from '../AddDiveBtn'
+import LinkButton from '../LinkButton'
 
 const LogsIndex = props => {
     
@@ -23,7 +23,17 @@ const LogsIndex = props => {
     if (!props.logs) return <div>Loading...</div>
     return (
         <div>
-            <AddDiveBtn />
+            <div className='top-row'>
+                <div className='row justify-content-center'>
+                    <div className='col-md-3'>
+                    <LinkButton
+                        className={'btn btn-block btn-outline-dark'}
+                        path={'/logs/new'}
+                        text={<h3>Add a Dive</h3>}
+                    />
+                    </div>
+                </div>
+            </div>
             {divelogs}
         </div>
     )
