@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 import { createLog } from '../../actions'
 import Form from './Form'
-import BackButton from '../BackButton'
+import LinkButton from '../LinkButton'
 
 export class CreateLog extends Component {
 
@@ -15,7 +15,13 @@ export class CreateLog extends Component {
     render() {
         return (
             <div>
-                <BackButton path={`/dashboard`} text={ 'Nevermind' } />
+                <div className='top-row'>
+                    <LinkButton 
+                        className={'btn btn-outline-dark'}
+                        path={'/dashboard'} 
+                        text={'Back to all dives'} 
+                    />
+                </div>
                 <h2 className='text-center edit-page'>Add Another Dive!</h2>
                 <Form submit={ this.submit } />
             </div>

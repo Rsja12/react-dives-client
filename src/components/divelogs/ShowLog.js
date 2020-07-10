@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
 
-import BackButton from '../BackButton'
 import { fetchLog } from '../../actions'
+import LinkButton from '../LinkButton'
 
 export class ShowLog extends Component {
 
@@ -22,7 +21,13 @@ export class ShowLog extends Component {
         const { log } = this.props
         return (
             <div>
-                <BackButton path={'/dashboard'} text={'Back to all dives'} />
+                <div className='top-row'>
+                    <LinkButton 
+                        className={'btn btn-outline-dark'}
+                        path={'/dashboard'} 
+                        text={'Back to all dives'} 
+                    />
+                </div>
                 <div className='center-container'>
                     <div className='row'>
                         <div className='col text-left'>
@@ -107,20 +112,18 @@ export class ShowLog extends Component {
                     </div>
                     <div className='row justify-content-center show-buttons'>
                         <div className='col-md-6'>
-                            <Link 
-                            style={{ textDecoration: 'none' }}
-                            to={`/logs/edit/${log.id}`} 
-                            className='btn btn-block btn-dark'>
-                                Edit this dive
-                            </Link>
+                            <LinkButton 
+                                className={'btn btn-dark btn-block'}
+                                path={`/logs/edit/${log.id}`}
+                                text={'Edit this dive'}
+                            />
                         </div>
                         <div className='col-md-6'>
-                            <Link
-                            style={{ textDecoration: 'none' }}
-                            to={`/logs/delete/${log.id}`}
-                            className='btn btn-danger btn-block'>
-                                Delete this dive
-                            </Link>
+                            <LinkButton 
+                                className={'btn btn-danger btn-block'}
+                                path={`/logs/delete/${log.id}`}
+                                text={'Delete this dive'}
+                            />
                         </div>
                     </div>
                 </div>
