@@ -1,13 +1,15 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import LinkButton from '../LinkButton'
 
 const LogItem = ({ log }) => {
     return (
         <div className='row'>
             <div className='col-sm-12'>
-                <Link to={ `/logs/${log.id}` } style={{ textDecoration: 'none' }}>
-                    <button className='btn btn-outline-dark btn-block btn-lg'>{ log.divesite } - { log.location } </button><br />
-                </Link>
+                <LinkButton 
+                    className={'btn btn-outline-dark btn-block btn-lg'}
+                    path={`/logs/${log.id}`}
+                    text={`${log.divesite} - ${log.location}`}
+                /><br />
             </div>
         </div>
     )
