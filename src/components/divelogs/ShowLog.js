@@ -14,6 +14,7 @@ export class ShowLog extends Component {
     }
 
     render() {
+        // console.log(this.props)
         if (!this.props.log) {
             return <div>Loading...</div>
         }

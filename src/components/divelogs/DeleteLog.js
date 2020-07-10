@@ -32,7 +32,6 @@ export class DeleteLog extends Component {
         const token = localStorage.getItem('token')
         const id = this.props.match.params.id
         this.props.deleteLog(token, id)
-        history.push('/logs')
     }
 
     render() {

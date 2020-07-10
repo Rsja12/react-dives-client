@@ -8,6 +8,8 @@ const appReducer = combineReducers({
     logs: logReducer
 })
 
+
+// REVIEW THIS
 export const rootReducer = (state, action) => {
     if (action.type === 'SIGN_OUT') {
         localStorage.clear()
