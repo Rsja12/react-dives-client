@@ -5,22 +5,21 @@ import { fetchLogs } from '../../actions'
 import LogItem from './LogItem'
 import LinkButton from '../LinkButton'
 
-const LogsIndex = props => {
-    
+const LogsIndex = ({logs, token, fetchLogs}) => {
+
     useEffect(() => {
-        const token = props.token
-        props.fetchLogs(token)
-    })
-    
-    const divelogs = props.logs.map(log => {
+        fetchLogs(token)
+    }, [])
+
+    const divelogs = logs.map(log => {
         return(
-            <div className='center-container' key={log.id}>
+            <div className='center-container'>
                 <LogItem log={log} />
             </div>
         )
     })
     
-    if (!props.logs) return <div>Loading...</div>
+    if (!logs) return <div>Loading...</div>
     return (
         <div>
             <div className='top-row'>
