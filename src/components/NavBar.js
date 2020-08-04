@@ -1,44 +1,41 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 import { signOut } from '../actions'
 
-export class NavBar extends Component {
+const NavBar = ({ isSignedIn, signOut }) => {
 
-    renderSignOut() {
-        const { isSignedIn } = this.props
+    const renderSignOut = () => {
         if (isSignedIn) {
             return(
                 <button 
                     className='btn btn-outline-light'
-                    onClick={ () => this.props.signOut() }>
+                    onClick={ () => signOut() }>
                     Sign Out
                 </button>
             )
         }
     }
 
-    render() {
-        return (
-            <nav className='navbar navbar-dark bg-dark'>
-                <ul className='nav'>
-                    <li className='nav-item'>
-                        <Link 
-                        className='navbar-brand text-white'
-                        to='/'>
-                            React Dives
-                        </Link>
-                    </li>
-                </ul>
-                <ul className='nav'>
-                    <li className='nav-item'>
-                        { this.renderSignOut() }
-                    </li>
-                </ul>
-            </nav>
-        )
-    }
+    return (
+        <nav className='navbar navbar-dark bg-dark'>
+            <ul className='nav'>
+                <li className='nav-item'>
+                    <Link 
+                    className='navbar-brand text-white'
+                    to='/'>
+                        React Dives
+                    </Link>
+                </li>
+            </ul>
+            <ul className='nav'>
+                <li className='nav-item'>
+                    { renderSignOut() }
+                </li>
+            </ul>
+        </nav>
+    )
 
 }
 
