@@ -18,6 +18,7 @@ const Form = props => {
 
     const [divelog, setDivelog] = useState(initialFormState)
 
+    // TODO: figure out why values are uncontrolled when rendered by EditLog component
     const handleInputChange = e => {
         const { name, value } = e.target
 
