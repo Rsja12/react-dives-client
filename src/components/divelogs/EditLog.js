@@ -6,7 +6,7 @@ import Form from './Form'
 import LinkButton from '../LinkButton'
 
 const EditLog = props => {
-
+    
     const token = localStorage.getItem('token')
     const id = props.match.params.id
 
