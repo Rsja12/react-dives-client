@@ -1,82 +1,85 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import { connect } from 'react-redux'
 
 import { customSignIn } from '../actions'
 
-export class SignIn extends Component {
+const SignIn = ({ customSignIn }) => {
 
-    state = {
+    const initialState = {
         user: {
             email: '',
             password: ''
         }
     }
 
-    handleInputChange = e => {
+    const [state, setState] = useState(initialState)
+
+    const handleInputChange = e => {
         const { name, value } = e.target
-        this.setState({
+
+        setState(prevState => ({
+            ...prevState,
             user: {
-                ...this.state.user,
+                ...prevState.user,
                 [name]: value
             }
-        })
+        }))
     }
 
-    handleSubmit = e => {
-        e.preventDefault()
+    const handleSubmit = e => {
+        e.preventDefault();
 
-        this.props.customSignIn(this.state)
+        customSignIn(state);
     }
 
-    render() {
-        return (
-            <div className='auth-form'>
-                <form 
-                    className='center-container auth-form' 
-                    onSubmit={ this.handleSubmit }>
-                    <div className='row justify-content-center'>
-                        <div className='col-md-10'>
-                            <input
-                                className='form-control auth-field'
-                                type='email'
-                                name='email'
-                                placeholder='Please enter your email'
-                                value={ this.state.email }
-                                onChange={ this.handleInputChange }
-                                autoComplete='off'
-                                required
-                            />
-                        </div>
-                    </div> 
-                    <div className='row justify-content-center'>
-                        <div className='col-md-10'>
-                            <input
-                                className='form-control auth-field'
-                                type='password'
-                                name='password'
-                                placeholder='Please enter your password'
-                                value={ this.state.password }
-                                onChange={ this.handleInputChange }
-                                autoComplete='off'
-                                required
-                            />
-                        </div>
-                    </div>                
-                    <div className='row justify-content-center'>
-                        <div className='col-md-8'>
-                            <button 
-                                style={{ marginTop: '7%' }}
-                                className='btn btn-light btn-block'
-                                type='submit' 
-                            >
-                                Sign In!
-                            </button>
-                        </div>
+
+    return(
+        <div className='auth-form'>
+            <form 
+            className='center-container auth-form' 
+            onSubmit={ handleSubmit }>
+                <div className='row justify-content-center'>
+                    <div className='col-md-10'>
+                        <input
+                            className='form-control auth-field'
+                            type='email'
+                            name='email'
+                            placeholder='Please enter your email'
+                            value={ state.email }
+                            onChange={ handleInputChange }
+                            autoComplete='off'
+                            required
+                        />
                     </div>
-                </form>
-            </div>
-        )
-    }
+                </div> 
+                <div className='row justify-content-center'>
+                    <div className='col-md-10'>
+                        <input
+                            className='form-control auth-field'
+                            type='password'
+                            name='password'
+                            placeholder='Please enter your password'
+                            value={ state.password }
+                            onChange={ handleInputChange }
+                            autoComplete='off'
+                            required
+                        />
+                    </div>
+                </div>                
+                <div className='row justify-content-center'>
+                    <div className='col-md-8'>
+                        <button 
+                            style={{ marginTop: '7%' }}
+                            className='btn btn-light btn-block'
+                            type='submit' 
+                        >
+                            Sign In!
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    )
 }
 
 export default connect(null, { customSignIn })(SignIn)
