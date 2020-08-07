@@ -1,28 +1,26 @@
 import React, { useState } from 'react'
 
 const Form = props => {
-    const { location, divesite, max_depth, bottom_time, visibility, water_temp, weight, notes } = props
 
     const initialFormState = {
         divelog: {
-            location: location || '',
-            divesite: divesite || '',
-            max_depth: max_depth || '',
-            bottom_time: bottom_time || '',
-            visibility: visibility || '',
-            water_temp: water_temp || '',
-            weight: weight || '',
-            notes: notes || ''
+            location: props.location || '',
+            divesite: props.divesite || '',
+            max_depth: props.max_depth || '',
+            bottom_time: props.bottom_time || '',
+            visibility: props.visibility || '',
+            water_temp: props.water_temp || '',
+            weight: props.weight || '',
+            notes: props.notes || ''
         }
     }
 
-    const [divelog, setDivelog] = useState(initialFormState)
+    const [state, setState] = useState(initialFormState)
 
-    // TODO: figure out why values are uncontrolled when rendered by EditLog component
     const handleInputChange = e => {
         const { name, value } = e.target
 
-        setDivelog(prevState => ({
+        setState(prevState => ({
             ...prevState,
             divelog: {
                 ...prevState.divelog,
@@ -32,9 +30,9 @@ const Form = props => {
     }
 
     const handleSubmit = e => {
-        e.preventDefault()
+        e.preventDefault();
 
-        props.submit(divelog)
+        props.submit(state)
     }
 
     return (
@@ -49,7 +47,7 @@ const Form = props => {
                         id='location'
                         name='location'
                         onChange={handleInputChange}
-                        value={ location }
+                        value={ state.divelog.location }
                         required
                     />
                 </div>
@@ -62,7 +60,7 @@ const Form = props => {
                         id='divesite'
                         name='divesite'
                         onChange={ handleInputChange }
-                        value={ divesite }
+                        value={ state.divelog.divesite }
                         required
                     />
                 </div>
@@ -78,7 +76,7 @@ const Form = props => {
                         id='max_depth'
                         name='max_depth'
                         onChange={ handleInputChange }
-                        value={ max_depth }
+                        value={ state.divelog.max_depth }
                     />
                 </div>
                 <div className='col-md-6'>
@@ -90,7 +88,7 @@ const Form = props => {
                         id='bottom_time'
                         name='bottom_time'
                         onChange={ handleInputChange }
-                        value={ bottom_time }
+                        value={ state.divelog.bottom_time }
                     />
                 </div>
             </div>
@@ -105,7 +103,7 @@ const Form = props => {
                         id='visibility'
                         name='visibility'
                         onChange={ handleInputChange }
-                        value={ visibility }
+                        value={ state.divelog.visibility }
                     />
                 </div>
                 <div className='col-md-4'>
@@ -117,7 +115,7 @@ const Form = props => {
                         id='water_temp'
                         name='water_temp'
                         onChange={ handleInputChange }
-                        value={ water_temp }
+                        value={ state.divelog.water_temp }
                     />
                 </div>
                 <div className='col-md-4'>
@@ -129,7 +127,7 @@ const Form = props => {
                         id='weight'
                         name='weight'
                         onChange={ handleInputChange }
-                        value={ weight }
+                        value={ state.divelog.weight }
                     />
                 </div>
             </div>
@@ -142,7 +140,7 @@ const Form = props => {
                         id='notes'
                         name='notes'
                         onChange={ handleInputChange }
-                        value={ notes }
+                        value={ state.divelog.notes }
                     />
                 </div>
             </div>
