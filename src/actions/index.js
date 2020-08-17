@@ -65,7 +65,6 @@ export const fetchLog = (token, id) => {
 
 export const createLog = (formValues, token) => {
     return async dispatch => {
-        // const date = new Date().toLocaleDateString()
         
         const response = await axios.post('/divelogs', formValues, {
             headers: {
