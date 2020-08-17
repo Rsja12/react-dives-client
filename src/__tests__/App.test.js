@@ -24,3 +24,11 @@ it ('renders 1 NavBar component', () => {
 it ('renders 3 PublicRoute components', () => {
     expect(wrapper.find(PublicRoute).length).toEqual(3);
 });
+
+it ('renders 1 Route component', () => {
+    expect(wrapper.find(Route).length).toEqual(1);
+});
+
+it ('renders 5 PublicRoute components', () => {
+    expect(wrapper.find(PrivateRoute).length).toEqual(5);
+});
