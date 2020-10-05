@@ -18,7 +18,7 @@ React | Redux | Thunk | Axios | Lodash | Bootstrap
 
 **Installation**
 ---------
-This is only the frontend side of this project. I'm using JSON Server to hold data at the moment while I continue to play around with the frontend. To install this project on your machine you can clone down this repo cd into it and run `npm install` followed by `yarn start` or `npm start`. Then, go to https://www.npmjs.com/package/json-server and follow the directions for setting up a very quick fake REST API. Once all that is done, start your JSON Server and you should be good to go!
+This is only the frontend side of this project. The backend can be found at https://github.com/Rsja12/react-dives-api. Navigate to the backend's repo and follow the install instructions there. Once that's done, you can clone this repo, install the dependencies, and run it. 
 
 **License**
 ---------

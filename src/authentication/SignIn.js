@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 import { customSignIn } from '../actions'
 
-const SignIn = ({ customSignIn }) => {
+export const SignIn = ({ customSignIn }) => {
 
     const initialState = {
         user: {
