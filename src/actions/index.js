@@ -5,6 +5,7 @@ import history from '../history'
 export const signUp = user => async dispatch => {
 
     const response = await axios.post('/users', user)
+    console.log(response)
 
     dispatch({
         type: 'SIGN_UP',
