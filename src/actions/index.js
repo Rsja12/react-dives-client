@@ -5,7 +5,6 @@ import history from '../history'
 export const signUp = user => async dispatch => {
 
     const response = await axios.post('/users', user)
-    console.log(response)
 
     dispatch({
         type: 'SIGN_UP',
@@ -117,32 +116,3 @@ export const deleteLog = (token, id) => {
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// export const signIn = userId => {
-//     return {
-//         type: 'SIGN_IN',
-//         payload: userId
-//     }
-// }
