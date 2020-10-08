@@ -13,22 +13,22 @@ beforeEach(() => {
     wrapper = shallow(<App />);
 });
 
-it ('renders without crashing', () => {
+it('renders without crashing', () => {
     expect(wrapper).toMatchSnapshot();
 });
 
-it ('renders 1 NavBar component', () => {
+it('renders 1 NavBar component', () => {
     expect(wrapper.find(NavBar).length).toEqual(1);
 });
 
-it ('renders 3 PublicRoute components', () => {
+it('renders 3 PublicRoute components', () => {
     expect(wrapper.find(PublicRoute).length).toEqual(3);
 });
 
-it ('renders 1 Route component', () => {
+it('renders 1 Route component', () => {
     expect(wrapper.find(Route).length).toEqual(1);
 });
 
-it ('renders 5 PublicRoute components', () => {
+it('renders 5 PublicRoute components', () => {
     expect(wrapper.find(PrivateRoute).length).toEqual(5);
 });

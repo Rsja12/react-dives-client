@@ -1,120 +1,124 @@
-import React, { useEffect } from 'react'
-import { connect } from 'react-redux'
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
 
-import { fetchLog } from '../../actions'
-import LinkButton from '../LinkButton'
+import { fetchLog } from '../../actions';
+import LinkButton from '../LinkButton';
 
 const ShowLog = ({ log, fetchLog, match }) => {
-
     useEffect(() => {
-        const token = localStorage.getItem('token')
-        const id = match.params.id
+        const token = localStorage.getItem('token');
+        const id = match.params.id;
 
-        fetchLog(token, id)
-    }, [])
+        fetchLog(token, id);
+    }, []);
 
-    if (!log) return <div>Loading...</div>
-    return(
-            <div>
-                <div className='top-row'>
-                    <LinkButton 
+    if (!log) return <div>Loading...</div>;
+    return (
+        <div>
+            <div className='top-row'>
+                <LinkButton
                     className={'btn btn-outline-dark'}
-                    path={'/dashboard'} 
-                    text={'Back to all dives'} 
+                    path={'/dashboard'}
+                    text={'Back to all dives'}
                 />
             </div>
             <div className='center-container'>
                 <div className='row'>
                     <div className='col text-left'>
-                        <ul className="list-group list-group-flush">
-                            <li className="list-group-item">
+                        <ul className='list-group list-group-flush'>
+                            <li className='list-group-item'>
                                 <div className='row'>
                                     <div className='col text-left text-uppercase font-weight-bold'>
                                         location:
                                     </div>
                                     <div className='col text-right'>
-                                        { log.location }
+                                        {log.location}
                                     </div>
                                 </div>
                             </li>
-                            <li className="list-group-item">
+                            <li className='list-group-item'>
                                 <div className='row'>
                                     <div className='col text-left text-uppercase font-weight-bold'>
                                         divesite:
                                     </div>
                                     <div className='col text-right'>
-                                        { log.divesite }
+                                        {log.divesite}
                                     </div>
                                 </div>
                             </li>
-                            <li className="list-group-item">
+                            <li className='list-group-item'>
                                 <div className='row'>
                                     <div className='col text-left text-uppercase font-weight-bold'>
                                         max depth:
                                     </div>
                                     <div className='col text-right'>
-                                        { log.max_depth } ft
+                                        {log.max_depth} ft
                                     </div>
                                 </div>
                             </li>
-                            <li className="list-group-item">
+                            <li className='list-group-item'>
                                 <div className='row'>
                                     <div className='col text-left text-uppercase font-weight-bold'>
                                         bottom time:
                                     </div>
                                     <div className='col text-right'>
-                                        { log.bottom_time } min
+                                        {log.bottom_time} min
                                     </div>
                                 </div>
                             </li>
-                            <li className="list-group-item">
+                            <li className='list-group-item'>
                                 <div className='row'>
                                     <div className='col text-left text-uppercase font-weight-bold'>
                                         visibility:
                                     </div>
                                     <div className='col text-right'>
-                                        { log.visibility } ft
+                                        {log.visibility} ft
                                     </div>
                                 </div>
                             </li>
-                            <li className="list-group-item">
+                            <li className='list-group-item'>
                                 <div className='row'>
                                     <div className='col text-left text-uppercase font-weight-bold'>
                                         water temp:
                                     </div>
                                     <div className='col text-right'>
-                                        { log.water_temp } F
+                                        {log.water_temp} F
                                     </div>
                                 </div>
                             </li>
-                            <li className="list-group-item">
+                            <li className='list-group-item'>
                                 <div className='row'>
                                     <div className='col text-left text-uppercase font-weight-bold'>
                                         weight:
                                     </div>
                                     <div className='col text-right'>
-                                        { log.weight } lbs
+                                        {log.weight} lbs
                                     </div>
                                 </div>
                             </li>
                         </ul>
                     </div>
                     <div className='col text-center'>
-                        <ul className="list-group list-group-flush">
-                            <li className="list-group-item"><span className='text-uppercase font-weight-bold'><p>Notes</p></span> {log.notes}</li>
+                        <ul className='list-group list-group-flush'>
+                            <li className='list-group-item'>
+                                <span className='text-uppercase font-weight-bold'>
+                                    <p>Notes</p>
+                                </span>{' '}
+                                {log.notes}
+                            </li>
                         </ul>
                     </div>
                 </div>
                 <div className='row justify-content-center show-buttons'>
                     <div className='col-md-6'>
-                        <LinkButton 
+                        <LinkButton
                             className={'btn btn-dark btn-block'}
                             path={`/logs/edit/${log.id}`}
                             text={'Edit this dive'}
                         />
                     </div>
                     <div className='col-md-6'>
-                        <LinkButton 
+                        <LinkButton
                             className={'btn btn-danger btn-block'}
                             path={`/logs/delete/${log.id}`}
                             text={'Delete this dive'}
@@ -123,12 +127,11 @@ const ShowLog = ({ log, fetchLog, match }) => {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
 const mapStateToProps = (state, ownProps) => ({
-    log: state.logs[ownProps.match.params.id]
-})
+    log: state.logs[ownProps.match.params.id],
+});
 
-export default connect(mapStateToProps, { fetchLog })(ShowLog)
-
+export default connect(mapStateToProps, { fetchLog })(ShowLog);

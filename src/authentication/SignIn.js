@@ -1,43 +1,42 @@
-import React, { useState } from 'react'
-import { connect } from 'react-redux'
+import React, { useState } from 'react';
+import { connect } from 'react-redux';
 
-import { customSignIn } from '../actions'
+import { customSignIn } from '../actions';
 
 export const SignIn = ({ customSignIn }) => {
-
     const initialState = {
         user: {
             email: '',
-            password: ''
-        }
-    }
+            password: '',
+        },
+    };
 
-    const [state, setState] = useState(initialState)
+    const [state, setState] = useState(initialState);
 
-    const handleInputChange = e => {
-        const { name, value } = e.target
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
 
-        setState(prevState => ({
+        setState((prevState) => ({
             ...prevState,
             user: {
                 ...prevState.user,
-                [name]: value
-            }
-        }))
-    }
+                [name]: value,
+            },
+        }));
+    };
 
-    const handleSubmit = e => {
+    const handleSubmit = (e) => {
         e.preventDefault();
 
         customSignIn(state);
-    }
+    };
 
-
-    return(
+    return (
         <div className='auth-form'>
-            <form 
-            className='center-container auth-form' 
-            onSubmit={ handleSubmit }>
+            <form
+                className='center-container auth-form'
+                onSubmit={handleSubmit}
+            >
                 <div className='row justify-content-center'>
                     <div className='col-md-10'>
                         <input
@@ -45,13 +44,13 @@ export const SignIn = ({ customSignIn }) => {
                             type='email'
                             name='email'
                             placeholder='Please enter your email'
-                            value={ state.email }
-                            onChange={ handleInputChange }
+                            value={state.email}
+                            onChange={handleInputChange}
                             autoComplete='off'
                             required
                         />
                     </div>
-                </div> 
+                </div>
                 <div className='row justify-content-center'>
                     <div className='col-md-10'>
                         <input
@@ -59,19 +58,19 @@ export const SignIn = ({ customSignIn }) => {
                             type='password'
                             name='password'
                             placeholder='Please enter your password'
-                            value={ state.password }
-                            onChange={ handleInputChange }
+                            value={state.password}
+                            onChange={handleInputChange}
                             autoComplete='off'
                             required
                         />
                     </div>
-                </div>                
+                </div>
                 <div className='row justify-content-center'>
                     <div className='col-md-8'>
-                        <button 
+                        <button
                             style={{ marginTop: '7%' }}
                             className='btn btn-light btn-block'
-                            type='submit' 
+                            type='submit'
                         >
                             Sign In!
                         </button>
@@ -79,7 +78,7 @@ export const SignIn = ({ customSignIn }) => {
                 </div>
             </form>
         </div>
-    )
-}
+    );
+};
 
-export default connect(null, { customSignIn })(SignIn)
+export default connect(null, { customSignIn })(SignIn);

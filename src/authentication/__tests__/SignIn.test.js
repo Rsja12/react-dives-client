@@ -7,12 +7,12 @@ let wrapper;
 
 beforeEach(() => {
     const mockProps = {
-        customSignIn: jest.fn()
-    }
+        customSignIn: jest.fn(),
+    };
 
     wrapper = shallow(<SignIn {...mockProps} />);
 });
 
-it ('renders without crashing', () => {
+it('renders without crashing', () => {
     expect(wrapper).toMatchSnapshot();
 });
